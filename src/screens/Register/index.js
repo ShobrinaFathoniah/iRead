@@ -2,11 +2,16 @@ import {View, ScrollView, Alert} from 'react-native';
 import React, {useState} from 'react';
 import {Forms, Header, Input} from '../../components';
 import axios from 'axios';
+import {useDispatch} from 'react-redux';
+import {setDataRegister} from './redux/action';
+import {BASE_URL} from '@env';
 
 const Register = ({navigation}) => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+
+  const dispatch = useDispatch();
 
   const dataUser = {
     email: email,
@@ -17,18 +22,14 @@ const Register = ({navigation}) => {
   const register = async () => {
     try {
       if (email && name && password) {
-        // internetChecker();
-
-        const res = await axios.post(
-          `http://code.aldipee.com/api/v1/auth/register`,
-          dataUser,
-        );
+        const res = await axios.post(`${BASE_URL}/auth/register`, dataUser);
 
         console.log(res, 'res');
         console.log(res.data.success, 'res');
 
         const success = res.data.success;
         if (success) {
+          dispatch(setDataRegister(dataUser));
           navigation.navigate('Success Register');
         }
       } else {
