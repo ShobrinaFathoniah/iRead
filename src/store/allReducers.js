@@ -1,3 +1,3 @@
-import {combineReducers} from 'redux';
+// import {combineReducers} from 'redux';
 
-export const allReducers = combineReducers({});
+// export const allReducers = combineReducers({});

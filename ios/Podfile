@@ -16,6 +16,10 @@ target 'iRead' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-async-storage/async-storage'
+
+  pod 'RNSVG', :path => '../node_modules/react-native-svg'
+
   target 'iReadTests' do
     inherit! :complete
     # Pods for testing
