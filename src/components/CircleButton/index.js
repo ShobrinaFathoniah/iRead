@@ -1,24 +1,19 @@
-import {StyleSheet, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {moderateScale} from 'react-native-size-matters';
-import {
-  BLACK,
-  LIGHT_BLUE_100,
-  LIGHT_BLUE_100_trans,
-  LIGTH_BLUE_500,
-} from '../../helpers/colors';
-import AntDesign from 'react-native-vector-icons/AntDesign';
+import {BLACK, LIGHT_BLUE_100} from '../../helpers/colors';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-const CircleButton = ({style, name, color = BLACK, size = 12}) => {
+const CircleButton = ({style, nameIcon, color = '#000000', size = 12}) => {
   const passedStyles = Array.isArray(style)
     ? Object.assign({}, ...style)
     : style;
 
   return (
     <TouchableOpacity style={[styles.circle, {...passedStyles}]}>
-      <AntDesign
+      <FontAwesome
         style={{alignSelf: 'center'}}
-        name={name}
+        name={nameIcon}
         color={color}
         size={size}
       />

@@ -1,7 +1,7 @@
 import SET_DETAIL from './types';
 
 const initialState = {
-  data: {},
+  dataDetail: {},
 };
 
 export const detailReducer = (state = initialState, action) => {
@@ -9,7 +9,7 @@ export const detailReducer = (state = initialState, action) => {
     case SET_DETAIL:
       return {
         ...state,
-        data: action.data,
+        dataDetail: action.detail,
       };
 
     default:

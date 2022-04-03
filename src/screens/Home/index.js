@@ -97,7 +97,10 @@ const Home = ({navigation}) => {
       <View>
         <Search navigation={navigation} />
         <Recommended data={recommendedBooks} navigation={navigation} />
+        {LoadingBar(isLoading)}
+
         <Popular data={popularBooks} navigation={navigation} />
+        {LoadingBar(isLoading)}
       </View>
     );
   };
@@ -109,7 +112,6 @@ const Home = ({navigation}) => {
       }>
       <Header />
       {LoadingBar(isLoading)}
-
       {connection || data ? homeScreen() : NoConnection(connection)}
     </ScrollView>
   );

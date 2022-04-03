@@ -5,7 +5,7 @@ import {SET_DETAIL} from './types';
 export const setDetailData = data => {
   return {
     type: SET_DETAIL,
-    data: data,
+    detail: data,
   };
 };
 

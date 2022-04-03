@@ -8,6 +8,8 @@ import {
 // import {NoInternetPic} from '../../assets';
 import {LibreBaskerville} from '../Fonts';
 import {moderateScale} from 'react-native-size-matters';
+import {noConnectionPic} from '../../assets';
+import {LIGHT_BLUE_600} from '../../helpers/colors';
 
 const NoConnection = connection => {
   if (connection) {
@@ -28,16 +30,16 @@ const NoConnection = connection => {
             resizeMode: 'contain',
             alignSelf: 'center',
           }}
-          // source={NoInternetPic}
+          source={noConnectionPic}
         />
         <LibreBaskerville
           style={{
             fontSize: 17,
-            // color: MAIN_COLOR,
+            color: LIGHT_BLUE_600,
             textAlign: 'center',
             margin: moderateScale(15),
           }}>
-          Turn On your Internet Connection and Refresh the Screen, Please! :)
+          Turn On your Internet Connection, Please! :)
         </LibreBaskerville>
       </View>
     );
