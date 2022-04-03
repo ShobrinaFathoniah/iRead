@@ -1,7 +1,15 @@
-import {SET_HEART} from './globalTypes';
+import {
+  SET_CONNECTION,
+  SET_HEART,
+  SET_LOADING,
+  SET_REFRESHING,
+} from './globalTypes';
 
 const initialState = {
-  heart: [false],
+  heart: false,
+  isLoading: false,
+  connection: true,
+  refreshing: false,
 };
 
 export const globalReducer = (state = initialState, action) => {
@@ -10,6 +18,23 @@ export const globalReducer = (state = initialState, action) => {
       return {
         ...state,
         heart: action.heart,
+      };
+    case SET_LOADING:
+      return {
+        ...state,
+        isLoading: action.status,
+      };
+
+    case SET_REFRESHING:
+      return {
+        ...state,
+        refreshing: action.refresh,
+      };
+
+    case SET_CONNECTION:
+      return {
+        ...state,
+        connection: action.connection,
       };
 
     default:
