@@ -7,9 +7,7 @@ import {
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {setDataBooks} from './redux/action';
-import axios from 'axios';
-import {BASE_URL} from '@env';
+import {getDataBooks} from './redux/action';
 import {
   Header,
   LoadingBar,
@@ -18,7 +16,7 @@ import {
   Search,
 } from '../../components';
 import Popular from '../../components/Popular';
-import {setIsLoading, setRefreshing} from '../../store/globalAction';
+import {setRefreshing} from '../../store/globalAction';
 
 const Home = ({navigation}) => {
   const dispatch = useDispatch();
@@ -30,26 +28,8 @@ const Home = ({navigation}) => {
 
   const [setHeart, heart] = useState(false);
 
-  const getDataBooks = async () => {
-    dispatch(setIsLoading(true));
-
-    try {
-      const res = await axios.get(`${BASE_URL}/books?limit=73`, {
-        headers: {Authorization: `Bearer ${dataToken}`},
-      });
-
-      if (res.data.results.length > 0) {
-        dispatch(setDataBooks(res.data.results));
-        dispatch(setIsLoading(false));
-        dispatch(setRefreshing(false));
-      }
-
-      console.log(res);
-    } catch (error) {
-      console.log(error);
-      dispatch(setIsLoading(false));
-      dispatch(setRefreshing(false));
-    }
+  const getDataBook = () => {
+    dispatch(getDataBooks(dataToken));
   };
 
   // tombol exit
@@ -75,22 +55,22 @@ const Home = ({navigation}) => {
   };
 
   useEffect(() => {
-    getDataBooks();
+    getDataBook();
     exit();
   }, []);
 
   const onRefresh = () => {
     dispatch(setRefreshing(true));
-    getDataBooks();
+    getDataBook();
   };
+
+  const popularBooks = data.slice(0, 20);
 
   const recommendedBooks = data
     .sort(function (a, b) {
       return b.average_rating - a.average_rating;
     })
     .slice(0, 6);
-
-  const popularBooks = data.slice(0, 20);
 
   const homeScreen = () => {
     return (

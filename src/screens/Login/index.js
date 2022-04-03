@@ -1,11 +1,8 @@
-import {View, ScrollView, Alert} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import React, {useState} from 'react';
 import {Forms, Header, Input, LoadingBar, NoConnection} from '../../components';
-import {BASE_URL} from '@env';
-import axios from 'axios';
 import {useDispatch, useSelector} from 'react-redux';
-import {setToken} from './redux/action';
-import {setIsLoading} from '../../store/globalAction';
+import {sendDataLogin} from './redux/action';
 
 const Login = ({navigation}) => {
   const [email, setEmail] = useState('');
@@ -25,35 +22,8 @@ const Login = ({navigation}) => {
     navigation.navigate('Home');
   }
 
-  const login = async () => {
-    dispatch(setIsLoading(true));
-
-    try {
-      if (email && password) {
-        const res = await axios.post(`${BASE_URL}/auth/login`, dataUser);
-
-        console.log(res, 'res');
-        console.log(res.data.tokens.access.token);
-
-        const token = res.data.tokens.access.token;
-        if (token) {
-          dispatch(setToken(token));
-          navigation.navigate('Home');
-
-          dispatch(setIsLoading(false));
-        } else {
-          Alert.alert('Pemberitahuan', 'Anda tidak dapat melakukan Login');
-          dispatch(setIsLoading(false));
-        }
-      } else {
-        Alert.alert('Pemberitahuan', 'Error: Semua Field Wajib diisi');
-        dispatch(setIsLoading(false));
-      }
-    } catch (error) {
-      Alert.alert('Pemberitahuan', `${error}`);
-      console.log(error, 'error');
-      dispatch(setIsLoading(false));
-    }
+  const login = () => {
+    dispatch(sendDataLogin(dataUser, email, password, navigation));
   };
 
   const goToRegister = () => navigation.navigate('Register');

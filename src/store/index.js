@@ -1,17 +1,26 @@
 import {applyMiddleware, createStore} from 'redux';
 import {allReducers} from './allReducers';
 import logger from 'redux-logger';
-import ReduxThunk from 'redux-thunk';
+import thunk from 'redux-thunk';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {persistReducer, persistStore} from 'redux-persist';
 
 const persistConfig = {
-  key: 'root',
+  key: 'root', //bebas
   storage: AsyncStorage,
+  whitelist: ['login'],
+  timeout: null,
 };
 
-const allMiddlewares = applyMiddleware(logger, ReduxThunk);
-const configPersist = persistReducer(persistConfig, allReducers);
+const allMiddlewares = applyMiddleware(logger, thunk);
+const persistedReducer = persistReducer(persistConfig, allReducers);
 
-export const store = createStore(configPersist, {}, allMiddlewares);
-export const Persistor = persistStore(store);
+export const store = createStore(persistedReducer, {}, allMiddlewares);
+export const persistedStore = persistStore(store);
+
+//asyncstorage -> ga perlu link
+//redux-persist
+
+//buka store
+//import persist => persistReducer, persistStore
+//blacklist/whitelist: ["",""] di config persist

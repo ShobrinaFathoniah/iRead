@@ -10,5 +10,5 @@ export const allReducers = combineReducers({
   login: loginReducer,
   home: homeReducer,
   global: globalReducer,
-  detail: detailReducer,
+  detailBook: detailReducer,
 });

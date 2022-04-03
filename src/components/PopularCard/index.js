@@ -17,12 +17,14 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useDispatch, useSelector} from 'react-redux';
 import {setHeart} from '../../store/globalAction';
+// import {formatCurrency} from 'react-native-format-currency';
 
 const PopularCard = ({urlImage, title, price, rating, publisher}) => {
   const dispatch = useDispatch();
   const heart = useSelector(state => state.global.heart);
 
-  const priceTooIDR = Intl.NumberFormat('id-ID', {
+  // const priceTooIDR = formatCurrency({amount: price, code: 'IDR'});
+  const priceTooIDR = new Intl.NumberFormat('id-ID', {
     style: 'currency',
     currency: 'IDR',
   })

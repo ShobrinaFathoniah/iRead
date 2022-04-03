@@ -2,8 +2,8 @@ import React, {useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';
 import Root from './src/routers';
 import {Provider} from 'react-redux';
-import {store, Persistor} from './src/store';
-import {PersistGate} from 'redux-persist/integration/react';
+import {store, persistedStore} from './src/store';
+import {PersistGate} from 'redux-persist/lib/integration/react';
 
 const App = () => {
   useEffect(() => {
@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={Persistor}>
+      <PersistGate persistor={persistedStore}>
         <Root />
       </PersistGate>
     </Provider>

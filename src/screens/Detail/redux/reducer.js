@@ -1,15 +1,15 @@
 import SET_DETAIL from './types';
 
 const initialState = {
-  dataDetail: {},
+  detail: {},
 };
 
 export const detailReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_DETAIL:
+    case 'SET_DETAIL':
       return {
         ...state,
-        dataDetail: action.detail,
+        detail: action.detail,
       };
 
     default:

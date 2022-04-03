@@ -1,11 +1,8 @@
-import {View, ScrollView, Alert} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import React, {useState} from 'react';
 import {Forms, Header, Input, LoadingBar, NoConnection} from '../../components';
-import axios from 'axios';
 import {useDispatch, useSelector} from 'react-redux';
-import {setDataRegister} from './redux/action';
-import {BASE_URL} from '@env';
-import {setIsLoading} from '../../store/globalAction';
+import {sendDataRegister} from './redux/action';
 
 const Register = ({navigation}) => {
   const [name, setName] = useState('');
@@ -21,31 +18,8 @@ const Register = ({navigation}) => {
     name: name,
   };
 
-  const register = async () => {
-    dispatch(setIsLoading(true));
-
-    try {
-      if (email && name && password) {
-        const res = await axios.post(`${BASE_URL}/auth/register`, dataUser);
-
-        console.log(res, 'res');
-        console.log(res.data.success, 'res');
-
-        const success = res.data.success;
-        if (success) {
-          dispatch(setDataRegister(dataUser));
-          navigation.navigate('Success Register');
-          dispatch(setIsLoading(false));
-        }
-      } else {
-        Alert.alert('Pemberitahuan', 'Error: Semua Field Wajib diisi');
-        dispatch(setIsLoading(false));
-      }
-    } catch (error) {
-      console.log(error);
-      Alert.alert('Pemberitahuan', `${error}`);
-      dispatch(setIsLoading(false));
-    }
+  const register = () => {
+    dispatch(sendDataRegister(dataUser, email, password, name, navigation));
   };
 
   const goToLogin = () => navigation.navigate('Login');
