@@ -1,12 +1,12 @@
 import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {LibreBaskerville} from '../Fonts';
 import {moderateScale} from 'react-native-size-matters';
 import {LIGHT_BLUE_600, LIGTH_BLUE_500} from '../../helpers/colors';
 import {FlatList} from 'react-native-gesture-handler';
 import BooksCard from '../BooksCard';
 
-const Recommended = ({data, onPress}) => {
+const Recommended = ({data, navigation}) => {
   const header = () => {
     return (
       <LibreBaskerville style={styles.bab}>Recommended Books</LibreBaskerville>
@@ -18,12 +18,17 @@ const Recommended = ({data, onPress}) => {
   };
 
   const booksCard = ({item}) => {
+    const idBook = item.id;
     return (
       <View>
         <BooksCard
           urlImage={item.cover_image}
           title={item.title}
-          onPress={onPress}
+          onPress={() => {
+            navigation.navigate('Detail', {
+              params: {idBook},
+            });
+          }}
         />
       </View>
     );

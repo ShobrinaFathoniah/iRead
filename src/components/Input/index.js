@@ -8,11 +8,21 @@ import {
 } from '../../helpers/colors';
 import {moderateScale} from 'react-native-size-matters';
 
-const Input = ({onChangeText, value, placeholder, secureTextEntry = false}) => {
+const Input = ({
+  onChangeText,
+  value,
+  placeholder,
+  secureTextEntry = false,
+  style,
+}) => {
+  const passedStyles = Array.isArray(style)
+    ? Object.assign({}, ...style)
+    : style;
+
   return (
     <View style={styles.containerInput}>
       <TextInput
-        style={styles.input}
+        style={[styles.input, {...passedStyles}]}
         onChangeText={onChangeText}
         value={value}
         placeholder={placeholder}

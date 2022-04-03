@@ -6,6 +6,9 @@ import Forms from './Forms';
 import Recommended from './Recommended';
 import BooksCard from './BooksCard';
 import Popular from './Popular';
+import PopularCard from './PopularCard';
+import Search from './Search';
+import CircleButton from './CircleButton';
 
 export * from './Fonts';
 export {
@@ -17,4 +20,7 @@ export {
   Recommended,
   BooksCard,
   Popular,
+  PopularCard,
+  Search,
+  CircleButton,
 };
