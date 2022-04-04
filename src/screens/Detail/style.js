@@ -124,6 +124,7 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
     letterSpacing: moderateScale(1.8),
     color: DARK_PURPLE_300,
+    marginHorizontal: moderateScale(5),
   },
 });
 
