@@ -9,6 +9,7 @@ import Popular from './Popular';
 import PopularCard from './PopularCard';
 import Search from './Search';
 import CircleButton from './CircleButton';
+import Rating from './Rating';
 
 export * from './Fonts';
 export {
@@ -23,4 +24,5 @@ export {
   PopularCard,
   Search,
   CircleButton,
+  Rating,
 };

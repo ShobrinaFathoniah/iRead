@@ -4,15 +4,16 @@ import {LibreBaskerville} from '../Fonts';
 import {moderateScale} from 'react-native-size-matters';
 import {LIGHT_BLUE_600} from '../../helpers/colors';
 import PopularCard from '../PopularCard';
+import {navigate} from '../../helpers/navigate';
 
-const Popular = ({data, navigation}) => {
+const Popular = ({data}) => {
   const popularCard = ({item}) => {
     const idBook = item.id;
 
     return (
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('Detail', {
+          navigate('Detail', {
             params: {idBook},
           });
         }}>

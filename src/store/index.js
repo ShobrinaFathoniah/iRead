@@ -6,7 +6,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {persistReducer, persistStore} from 'redux-persist';
 
 const persistConfig = {
-  key: 'root', //bebas
+  key: 'token', //bebas
   storage: AsyncStorage,
   whitelist: ['login'],
   timeout: null,

@@ -18,7 +18,7 @@ import {
 import Popular from '../../components/Popular';
 import {setRefreshing} from '../../store/globalAction';
 
-const Home = ({navigation}) => {
+const Home = () => {
   const dispatch = useDispatch();
   const {dataToken} = useSelector(state => state.login);
   const {data} = useSelector(state => state.home);
@@ -60,7 +60,7 @@ const Home = ({navigation}) => {
   }, []);
 
   const onRefresh = () => {
-    dispatch(setRefreshing(true));
+    // dispatch(setRefreshing(true));
     getDataBook();
   };
 
@@ -75,24 +75,25 @@ const Home = ({navigation}) => {
   const homeScreen = () => {
     return (
       <View>
-        <Search navigation={navigation} />
-        <Recommended data={recommendedBooks} navigation={navigation} />
-        {LoadingBar(isLoading)}
+        <Search />
+        <Recommended data={recommendedBooks} />
+        {/* {LoadingBar(isLoading)} */}
 
-        <Popular data={popularBooks} navigation={navigation} />
-        {LoadingBar(isLoading)}
+        <Popular data={popularBooks} />
+        {/* {LoadingBar(isLoading)} */}
       </View>
     );
   };
 
   return (
     <ScrollView
-      refreshControl={
-        <RefreshControl onRefresh={onRefresh} refreshing={refreshing} />
-      }>
+    // refreshControl={
+    //   <RefreshControl onRefresh={onRefresh} refreshing={refreshing} />
+    // }
+    >
       <Header />
-      {LoadingBar(isLoading)}
-      {connection || data ? homeScreen() : NoConnection(connection)}
+      {/* {LoadingBar(isLoading)} */}
+      {connection ? homeScreen() : NoConnection(connection)}
     </ScrollView>
   );
 };

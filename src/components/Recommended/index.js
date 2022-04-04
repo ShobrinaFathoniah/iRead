@@ -5,8 +5,9 @@ import {moderateScale} from 'react-native-size-matters';
 import {LIGHT_BLUE_600, LIGTH_BLUE_500} from '../../helpers/colors';
 import {FlatList} from 'react-native-gesture-handler';
 import BooksCard from '../BooksCard';
+import {navigate} from '../../helpers/navigate';
 
-const Recommended = ({data, navigation}) => {
+const Recommended = ({data}) => {
   const header = () => {
     return (
       <LibreBaskerville style={styles.bab}>Recommended Books</LibreBaskerville>
@@ -25,7 +26,7 @@ const Recommended = ({data, navigation}) => {
           urlImage={item.cover_image}
           title={item.title}
           onPress={() => {
-            navigation.navigate('Detail', {
+            navigate('Detail', {
               params: {idBook},
             });
           }}

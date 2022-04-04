@@ -1,11 +1,36 @@
-import {View, Share} from 'react-native';
-import React, {useEffect} from 'react';
+import {
+  View,
+  Share,
+  ScrollView,
+  TouchableOpacity,
+  RefreshControl,
+  Image,
+} from 'react-native';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getDataDetail} from './redux/action';
-import {CircleButton, LibreBaskerville} from '../../components';
+import {
+  CircleButton,
+  Courgette,
+  LibreBaskerville,
+  LoadingBar,
+  NoConnection,
+  Rating,
+} from '../../components';
 import styles from './style';
 import {moderateScale} from 'react-native-size-matters';
-import {LIGHT_BLUE_600} from '../../helpers/colors';
+import {
+  LIGHT_BLUE_100,
+  LIGHT_BLUE_100_trans,
+  LIGHT_BLUE_300,
+  LIGHT_BLUE_600,
+  LIGTH_BLUE_500,
+  RED_500,
+} from '../../helpers/colors';
+import axios from 'axios';
+import {BASE_URL} from '@env';
+import {setIsLoading, setRefreshing} from '../../store/globalAction';
+import {numberToIDR} from '../../helpers/numberToIDR';
 
 const Detail = ({route, navigation}) => {
   const {params} = route.params;
@@ -13,12 +38,33 @@ const Detail = ({route, navigation}) => {
 
   const dispatch = useDispatch();
   const {dataToken} = useSelector(state => state.login);
-  const {detail = {}} = useSelector(state => state.detailBook);
+  const {detail} = useSelector(state => state.detailBook);
+  const {refreshing, isLoading, connection} = useSelector(
+    state => state.global,
+  );
 
   // const [detailData, setDetailData] = useState({});
 
   const getDetail = () => {
+    // dispatch(setIsLoading(true));
     dispatch(getDataDetail(dataToken, idBook));
+    // try {
+    //   const res = await axios.get(`${BASE_URL}/books/${idBook}`, {
+    //     headers: {Authorization: `Bearer ${dataToken}`},
+    //   });
+    //   console.log(res, 'res');
+    //   // if (res.status === 200) {
+    //   console.log(res.data, 'res');
+    //   // dispatch(setDetailData(res.data));
+    //   // setDetailData(res.data);
+    //   dispatch(setIsLoading(false));
+    //   dispatch(setRefreshing(false));
+    //   // }
+    // } catch (error) {
+    //   console.log(error);
+    //   dispatch(setIsLoading(false));
+    //   dispatch(setRefreshing(false));
+    // }
   };
 
   useEffect(() => {
@@ -27,12 +73,152 @@ const Detail = ({route, navigation}) => {
 
   const shareData = () => {
     Share.share({
-      message: `Saya ingin merekomendasikan Anda Buku dengan judul '${detail.title}'`,
+      message: `Saya ingin merekomendasikan Anda Buku yang berjudul  '${
+        detail.title
+      }', buku tersebut merupakan karangan dari ${
+        detail.author
+      }, memiliki jumlah halaman ${
+        detail.page_count
+      } halaman. Buku ini memiliki harga yaitu sebesar ${numberToIDR(
+        detail.price,
+      )}. Ayo buruan beli! Stok buku yang tersedia berjumlah ${
+        detail.stock_available
+      } buku.`,
     });
   };
 
+  const onRefresh = () => {
+    // dispatch(setRefreshing(true));
+    getDetail();
+  };
+
+  const stock = detail.stock_available;
+  const stockChecker = stock => (stock > 0 ? LIGHT_BLUE_600 : RED_500);
+
+  const buttonBuy = stock => {
+    if (stock > 0) {
+      return (
+        <View style={styles.containerButtonBuy}>
+          <TouchableOpacity style={styles.buttonBuy}>
+            <LibreBaskerville style={[styles.text, styles.textButtonBuy]}>
+              Buy {numberToIDR(detail.price)}
+            </LibreBaskerville>
+          </TouchableOpacity>
+        </View>
+      );
+    } else {
+      return (
+        <View style={styles.containerButtonBuy}>
+          <View
+            style={[
+              styles.buttonBuy,
+              {
+                backgroundColor: RED_500,
+              },
+            ]}>
+            <LibreBaskerville style={[styles.text, styles.textButtonBuy]}>
+              Out of Stock
+            </LibreBaskerville>
+          </View>
+        </View>
+      );
+    }
+  };
+
+  const detailScreen = () => {
+    return (
+      <View>
+        <View style={styles.containerAllBookInfo}>
+          <View style={styles.containerImage}>
+            <Image
+              style={styles.coverImage}
+              source={{uri: detail.cover_image}}
+            />
+          </View>
+          <View style={styles.containerBookInfo}>
+            <LibreBaskerville
+              type="Bold"
+              style={[styles.text, styles.textTitle]}>
+              {detail.title}
+            </LibreBaskerville>
+
+            <LibreBaskerville style={[styles.text, styles.textAuthor]}>
+              {detail.author}
+            </LibreBaskerville>
+
+            <LibreBaskerville style={[styles.text, styles.textPublisher]}>
+              {detail.publisher}
+            </LibreBaskerville>
+            <View style={styles.containerRating}>
+              <Rating rating={detail.average_rating} />
+              <LibreBaskerville style={[styles.text, styles.textRating]}>
+                {detail.average_rating}
+              </LibreBaskerville>
+
+              <LibreBaskerville
+                style={[styles.text, styles.textSold, {color: LIGHT_BLUE_300}]}>
+                |
+              </LibreBaskerville>
+
+              <LibreBaskerville style={[styles.text, styles.textSold]}>
+                {detail.total_sale}
+              </LibreBaskerville>
+              <LibreBaskerville style={[styles.text, styles.textSold]}>
+                Sold
+              </LibreBaskerville>
+            </View>
+          </View>
+        </View>
+
+        <View style={styles.containerInfoAvailableBooks}>
+          <View style={styles.containerPages}>
+            <LibreBaskerville
+              type="Bold"
+              style={[styles.text, styles.textPages]}>
+              {detail.page_count}
+            </LibreBaskerville>
+            <LibreBaskerville style={[styles.text, styles.title]}>
+              Pages
+            </LibreBaskerville>
+          </View>
+          <View style={styles.containerStocks}>
+            <LibreBaskerville
+              type="Bold"
+              style={[
+                styles.text,
+                styles.textStocks,
+                {
+                  color: stockChecker(stock),
+                },
+              ]}>
+              {stock}
+            </LibreBaskerville>
+            <LibreBaskerville style={[styles.text, styles.title]}>
+              Stocks
+            </LibreBaskerville>
+          </View>
+        </View>
+
+        {buttonBuy(stock)}
+
+        <View style={styles.containerOverview}>
+          <LibreBaskerville style={[styles.text, styles.titleSynopsis]}>
+            Synopsis
+          </LibreBaskerville>
+          <Courgette style={[styles.text, styles.textSynopsis]}>
+            {detail.synopsis}
+          </Courgette>
+        </View>
+      </View>
+    );
+  };
+
   return (
-    <View>
+    <ScrollView
+    // refreshControl={
+    //   <RefreshControl onRefresh={onRefresh} refreshing={refreshing} />
+    // }
+    >
       <View style={styles.allButtons}>
         <View>
           <CircleButton
@@ -42,21 +228,17 @@ const Detail = ({route, navigation}) => {
         </View>
         <View style={styles.miniButtons2}>
           <CircleButton
-            style={{marginEnd: moderateScale(5)}}
+            color={RED_500}
+            style={{marginEnd: moderateScale(10)}}
             nameIcon="heart-o"
-            color={LIGHT_BLUE_600}
           />
-          <CircleButton
-            style={{marginEnd: moderateScale(18)}}
-            color={LIGHT_BLUE_600}
-            nameIcon="share"
-            onPress={shareData}
-          />
+          <CircleButton nameIcon="share" onPress={shareData} />
         </View>
       </View>
 
-      <LibreBaskerville>{detail.title}</LibreBaskerville>
-    </View>
+      {/* {LoadingBar(isLoading)} */}
+      {connection ? detailScreen() : NoConnection(connection)}
+    </ScrollView>
   );
 };
 

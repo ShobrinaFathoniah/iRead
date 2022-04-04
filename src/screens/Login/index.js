@@ -18,12 +18,12 @@ const Login = ({navigation}) => {
     password: password,
   };
 
-  if (dataToken) {
-    navigation.navigate('Home');
-  }
+  // if (dataToken) {
+  //   navigation.navigate('Home');
+  // }
 
   const login = () => {
-    dispatch(sendDataLogin(dataUser, email, password, navigation));
+    dispatch(sendDataLogin(dataUser, email, password));
   };
 
   const goToRegister = () => navigation.navigate('Register');
@@ -34,31 +34,19 @@ const Login = ({navigation}) => {
         <Forms type="Login" onPressButton={login} onPressText={goToRegister}>
           <View>
             <Input
-              onChangeText={value => {
-                if (dataEmail) {
-                  setEmail(dataEmail);
-                } else {
-                  setEmail(value);
-                }
-              }}
+              onChangeText={value => setEmail(value)}
               value={email}
               placeholder="Email"
             />
             <Input
-              onChangeText={value => {
-                if (dataPassword) {
-                  setPassword(dataPassword);
-                } else {
-                  setPassword(value);
-                }
-              }}
+              onChangeText={value => setPassword(value)}
               value={password}
               placeholder="Password"
               secureTextEntry={true}
             />
           </View>
         </Forms>
-        {LoadingBar(isLoading)}
+        {/* {LoadingBar(isLoading)} */}
       </View>
     );
   };

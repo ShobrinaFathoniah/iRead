@@ -14,3 +14,6 @@ export const DARK_PURPLE_500 = '#272b5a';
 export const PURPLE = '#CB9BF1';
 
 export const YELLOW_200 = '#F1E1A6';
+export const YELLOW_500 = '#dbcc26';
+
+export const RED_500 = '#c4131e';

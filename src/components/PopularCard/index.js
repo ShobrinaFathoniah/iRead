@@ -10,6 +10,7 @@ import {
   LIGHT_BLUE_300,
   LIGHT_BLUE_600,
   LIGTH_BLUE_500,
+  RED_500,
   YELLOW_200,
 } from '../../helpers/colors';
 import {LibreBaskerville} from '../Fonts';
@@ -17,6 +18,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useDispatch, useSelector} from 'react-redux';
 import {setHeart} from '../../store/globalAction';
+import {numberToIDR} from '../../helpers/numberToIDR';
 // import {formatCurrency} from 'react-native-format-currency';
 
 const PopularCard = ({urlImage, title, price, rating, publisher}) => {
@@ -24,12 +26,7 @@ const PopularCard = ({urlImage, title, price, rating, publisher}) => {
   const heart = useSelector(state => state.global.heart);
 
   // const priceTooIDR = formatCurrency({amount: price, code: 'IDR'});
-  const priceTooIDR = new Intl.NumberFormat('id-ID', {
-    style: 'currency',
-    currency: 'IDR',
-  })
-    .format(price)
-    .split(',')[0];
+  const priceToIDR = numberToIDR(price);
 
   const loved = () =>
     heart ? dispatch(setHeart(false)) : dispatch(setHeart(true));
@@ -47,7 +44,7 @@ const PopularCard = ({urlImage, title, price, rating, publisher}) => {
             {title}
           </LibreBaskerville>
           <LibreBaskerville type="Bold" style={[styles.text, styles.textPrice]}>
-            {priceTooIDR}
+            {priceToIDR}
           </LibreBaskerville>
           <LibreBaskerville style={[styles.text, styles.textPublisher]}>
             {publisher}
@@ -62,7 +59,7 @@ const PopularCard = ({urlImage, title, price, rating, publisher}) => {
                 style={styles.heart}
                 name={heart ? 'heart' : 'hearto'}
                 size={15}
-                color={LIGHT_BLUE_300}
+                color={RED_500}
               />
             </TouchableOpacity>
           </View>

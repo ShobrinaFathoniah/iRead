@@ -30,7 +30,7 @@ export const getDataDetail = (dataToken, idBook) => async dispatch => {
 
 export const setDetailData = data => {
   return {
-    type: 'SET_DETAIL',
+    type: SET_DETAIL,
     detail: data,
   };
 };

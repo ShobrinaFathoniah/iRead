@@ -5,12 +5,13 @@ import {moderateScale} from 'react-native-size-matters';
 import {LIGHT_BLUE_100, LIGHT_BLUE_100_trans} from '../../helpers/colors';
 import {widthPercentageToDP} from 'react-native-responsive-screen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {navigate} from '../../helpers/navigate';
 
-const Search = ({navigation}) => {
+const Search = () => {
   const [search, setSearch] = useState('');
 
   const goToSearchPage = () => {
-    navigation.navigate('Search', {
+    navigate('Search', {
       params: {search},
     });
   };

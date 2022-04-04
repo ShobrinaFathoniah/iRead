@@ -22,13 +22,13 @@ export const setIsLoading = status => {
 export const setRefreshing = refresh => {
   return {
     type: SET_REFRESHING,
-    refresh, //status: status
+    refresh,
   };
 };
 
 export const setConnection = connection => {
   return {
     type: SET_CONNECTION,
-    connection, //status: status
+    connection,
   };
 };
