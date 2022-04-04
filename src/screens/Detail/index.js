@@ -3,7 +3,6 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getDataDetail} from './redux/action';
 import {CircleButton, LibreBaskerville} from '../../components';
-import {CommonActions} from '@react-navigation/native';
 import styles from './style';
 import {moderateScale} from 'react-native-size-matters';
 import {LIGHT_BLUE_600} from '../../helpers/colors';
@@ -14,7 +13,7 @@ const Detail = ({route, navigation}) => {
 
   const dispatch = useDispatch();
   const {dataToken} = useSelector(state => state.login);
-  const {detail} = useSelector(state => state.detailBook);
+  const {detail = {}} = useSelector(state => state.detailBook);
 
   // const [detailData, setDetailData] = useState({});
 
