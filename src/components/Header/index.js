@@ -1,13 +1,7 @@
 import {StyleSheet, View, StatusBar} from 'react-native';
 import React from 'react';
 import {moderateScale} from 'react-native-size-matters';
-import {
-  BLACK,
-  LIGHT_BLUE_100,
-  LIGHT_BLUE_300,
-  PURPLE,
-  WHITE,
-} from '../../helpers/colors';
+import {BLACK, LIGHT_BLUE_300} from '../../helpers/colors';
 import {PassionConflict} from '../Fonts';
 import CircleButton from '../CircleButton';
 

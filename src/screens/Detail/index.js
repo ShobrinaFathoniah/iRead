@@ -6,7 +6,7 @@ import {
   RefreshControl,
   Image,
 } from 'react-native';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getDataDetail} from './redux/action';
 import {
@@ -19,17 +19,8 @@ import {
 } from '../../components';
 import styles from './style';
 import {moderateScale} from 'react-native-size-matters';
-import {
-  LIGHT_BLUE_100,
-  LIGHT_BLUE_100_trans,
-  LIGHT_BLUE_300,
-  LIGHT_BLUE_600,
-  LIGTH_BLUE_500,
-  RED_500,
-} from '../../helpers/colors';
-import axios from 'axios';
-import {BASE_URL} from '@env';
-import {setHeart, setIsLoading, setRefreshing} from '../../store/globalAction';
+import {LIGHT_BLUE_300, LIGHT_BLUE_600, RED_500} from '../../helpers/colors';
+import {setHeart, setRefreshing} from '../../store/globalAction';
 import {numberToIDR} from '../../helpers/numberToIDR';
 import {Notification} from '../../helpers/notification';
 
@@ -45,8 +36,6 @@ const Detail = ({route, navigation}) => {
   const {refreshing, isLoading, connection} = useSelector(
     state => state.global,
   );
-
-  // const [detailData, setDetailData] = useState({});
 
   const getDetail = () => {
     dispatch(getDataDetail(dataToken, id_book));

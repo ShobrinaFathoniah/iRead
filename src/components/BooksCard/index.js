@@ -1,14 +1,7 @@
-import {StyleSheet, Image, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {moderateScale} from 'react-native-size-matters';
-import {LibreBaskerville} from '../Fonts';
-import {
-  BLACK,
-  LIGHT_BLUE_300,
-  LIGHT_BLUE_600,
-  LIGTH_BLUE_500,
-  WHITE,
-} from '../../helpers/colors';
+import {LIGTH_BLUE_500} from '../../helpers/colors';
 
 const BooksCard = ({urlImage, title, onPress}) => {
   return (
@@ -34,7 +27,6 @@ const styles = StyleSheet.create({
     height: moderateScale(250),
     width: moderateScale(200),
     resizeMode: 'contain',
-    // backgroundColor: LIGHT_BLUE_600,
     borderRadius: moderateScale(4),
     margin: moderateScale(10),
   },

@@ -5,7 +5,7 @@ import {
   BackHandler,
   Alert,
 } from 'react-native';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getDataBooks} from './redux/action';
 import {
@@ -77,10 +77,7 @@ const Home = () => {
         {LoadingBar(isLoading)}
 
         <Recommended data={recommendedBooks} />
-        {/* {LoadingBar(isLoading)} */}
-
         <Popular data={popularBooks} />
-        {/* {LoadingBar(isLoading)} */}
       </View>
     );
   };

@@ -1,7 +1,6 @@
 import {StyleSheet, TextInput, View} from 'react-native';
 import React from 'react';
 import {
-  BLACK,
   LIGHT_BLUE_300,
   LIGHT_BLUE_600,
   LIGTH_BLUE_500,

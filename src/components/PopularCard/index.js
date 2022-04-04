@@ -1,5 +1,5 @@
 import {StyleSheet, Image, View, TouchableOpacity} from 'react-native';
-import React, {useState} from 'react';
+import React from 'react';
 import {
   heightPercentageToDP,
   widthPercentageToDP,
@@ -7,9 +7,7 @@ import {
 import {moderateScale} from 'react-native-size-matters';
 import {
   DARK_PURPLE_500,
-  LIGHT_BLUE_300,
   LIGHT_BLUE_600,
-  LIGTH_BLUE_500,
   RED_500,
   YELLOW_200,
 } from '../../helpers/colors';
@@ -20,13 +18,10 @@ import {useDispatch, useSelector} from 'react-redux';
 import {setHeart} from '../../store/globalAction';
 import {numberToIDR} from '../../helpers/numberToIDR';
 import {Notification} from '../../helpers/notification';
-// import {formatCurrency} from 'react-native-format-currency';
 
 const PopularCard = ({urlImage, title, price, rating, publisher, id_book}) => {
   const dispatch = useDispatch();
   const {heart, idBook} = useSelector(state => state.global);
-
-  // const priceTooIDR = formatCurrency({amount: price, code: 'IDR'});
   const priceToIDR = numberToIDR(price);
 
   const loved = () => {

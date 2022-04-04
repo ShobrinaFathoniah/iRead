@@ -1,8 +1,8 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React, {useState} from 'react';
+import {StyleSheet, View} from 'react-native';
+import React from 'react';
 import {LibreBaskerville} from '../Fonts';
 import {moderateScale} from 'react-native-size-matters';
-import {LIGHT_BLUE_600, LIGTH_BLUE_500} from '../../helpers/colors';
+import {LIGHT_BLUE_600} from '../../helpers/colors';
 import {FlatList} from 'react-native-gesture-handler';
 import BooksCard from '../BooksCard';
 import {navigate} from '../../helpers/navigate';

@@ -1,11 +1,9 @@
 import {View, Image} from 'react-native';
 import React from 'react';
-// import {MAIN_COLOR, PRIMARY_DARK} from '../../utils/colors';
 import {
   heightPercentageToDP,
   widthPercentageToDP,
 } from 'react-native-responsive-screen';
-// import {NoInternetPic} from '../../assets';
 import {LibreBaskerville} from '../Fonts';
 import {moderateScale} from 'react-native-size-matters';
 import {noConnectionPic} from '../../assets';
@@ -20,7 +18,6 @@ const NoConnection = connection => {
         style={{
           flex: 1,
           justifyContent: 'center',
-          // backgroundColor: PRIMARY_DARK,
           margin: moderateScale(10),
         }}>
         <Image
