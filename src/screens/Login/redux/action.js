@@ -4,6 +4,7 @@ import {BASE_URL} from '@env';
 import {Alert} from 'react-native';
 import axios from 'axios';
 import {navigate} from '../../../helpers/navigate';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const sendDataLogin = (dataUser, email, password) => async dispatch => {
   try {
@@ -17,6 +18,7 @@ export const sendDataLogin = (dataUser, email, password) => async dispatch => {
       const token = res.data.tokens.access.token;
       if (token) {
         dispatch(setToken(token));
+        await AsyncStorage.setItem('@token', token);
         navigate('Home');
 
         dispatch(setIsLoading(false));

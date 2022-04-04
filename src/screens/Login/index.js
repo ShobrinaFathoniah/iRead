@@ -1,8 +1,9 @@
 import {View, ScrollView} from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Forms, Header, Input, LoadingBar, NoConnection} from '../../components';
 import {useDispatch, useSelector} from 'react-redux';
-import {sendDataLogin} from './redux/action';
+import {sendDataLogin, setToken} from './redux/action';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Login = ({navigation}) => {
   const [email, setEmail] = useState('');
@@ -22,9 +23,25 @@ const Login = ({navigation}) => {
   //   navigation.navigate('Home');
   // }
 
+  const tokenChecker = async () => {
+    try {
+      const value = await AsyncStorage.getItem('@token');
+      if (value !== null) {
+        dispatch(setToken(value));
+        navigation.navigate('Home');
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   const login = () => {
     dispatch(sendDataLogin(dataUser, email, password));
   };
+
+  useEffect(() => {
+    tokenChecker();
+  }, []);
 
   const goToRegister = () => navigation.navigate('Register');
 
