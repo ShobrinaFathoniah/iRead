@@ -1,14 +1,17 @@
-import {StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {StyleSheet, Image, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {moderateScale} from 'react-native-size-matters';
-import {LIGTH_BLUE_500} from '../../helpers/colors';
+import {DARK_PURPLE_500, LIGTH_BLUE_500, WHITE} from '../../helpers/colors';
 
 const BooksCard = ({urlImage, title, onPress}) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Image style={styles.image} source={{uri: urlImage}} />
-      {/* <LibreBaskerville style={styles.text}>{title}</LibreBaskerville> */}
-    </TouchableOpacity>
+    <View style={{alignItems: 'center', marginBottom: moderateScale(10)}}>
+      <TouchableOpacity style={styles.container} onPress={onPress}>
+        <Image style={styles.image} source={{uri: urlImage}} />
+        {/* <LibreBaskerville style={styles.text}>{title}</LibreBaskerville> */}
+      </TouchableOpacity>
+      <View style={styles.bawahan}></View>
+    </View>
   );
 };
 
@@ -17,18 +20,32 @@ export default BooksCard;
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: moderateScale(40),
-    alignItems: 'center',
+    elevation: moderateScale(18),
+    shadowColor: 'black',
+    elevation: moderateScale(8),
+    shadowColor: 'black',
+    shadowOpacity: 0.26,
+    shadowOffset: {width: 0, height: 2},
+    shadowRadius: 10,
+  },
+  bawahan: {
     borderBottomWidth: moderateScale(15),
     borderColor: LIGTH_BLUE_500,
     borderBottomRightRadius: moderateScale(10),
     borderBottomLeftRadius: moderateScale(10),
+    width: moderateScale(200),
+    elevation: moderateScale(8),
+    shadowColor: 'black',
+    shadowOpacity: 0.26,
+    shadowOffset: {width: 0, height: 2},
+    shadowRadius: 10,
+    marginTop: moderateScale(10),
   },
   image: {
-    height: moderateScale(250),
-    width: moderateScale(200),
+    height: moderateScale(275),
+    width: moderateScale(180),
     resizeMode: 'contain',
     borderRadius: moderateScale(4),
-    margin: moderateScale(10),
   },
   text: {
     margin: moderateScale(10),

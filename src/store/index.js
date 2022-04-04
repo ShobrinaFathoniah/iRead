@@ -15,8 +15,8 @@ const persistConfig = {
 const allMiddlewares = applyMiddleware(logger, thunk);
 const persistedReducer = persistReducer(persistConfig, allReducers);
 
-export const store = createStore(persistedReducer, {}, allMiddlewares);
-export const persistedStore = persistStore(store);
+export const store = createStore(allReducers, {}, allMiddlewares);
+// export const persistedStore = persistStore(store);
 
 //asyncstorage -> ga perlu link
 //redux-persist

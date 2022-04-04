@@ -9,6 +9,7 @@ import {
   DARK_PURPLE_500,
   LIGHT_BLUE_600,
   RED_500,
+  WHITE,
   YELLOW_200,
 } from '../../helpers/colors';
 import {LibreBaskerville} from '../Fonts';
@@ -87,10 +88,12 @@ export default PopularCard;
 const styles = StyleSheet.create({
   page: {
     width: widthPercentageToDP(47),
-    borderRadius: moderateScale(4),
-    borderWidth: moderateScale(0.2),
+    borderRadius: moderateScale(8),
     margin: moderateScale(5),
     borderColor: DARK_PURPLE_500,
+    shadowColor: DARK_PURPLE_500,
+    elevation: 10,
+    backgroundColor: WHITE,
   },
   image: {
     height: heightPercentageToDP(25),
