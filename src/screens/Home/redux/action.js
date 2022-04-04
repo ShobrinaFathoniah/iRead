@@ -4,26 +4,26 @@ import {BASE_URL} from '@env';
 import {setIsLoading, setRefreshing} from '../../../store/globalAction';
 
 export const getDataBooks = payload => async dispatch => {
-  // dispatch(setIsLoading(true));
-
   try {
+    dispatch(setIsLoading(true));
+
     const res = await axios.get(`${BASE_URL}/books?limit=73`, {
       headers: {Authorization: `Bearer ${payload}`},
     });
 
     if (res.status === 200) {
       dispatch(setDataBooks(res.data.results)); //dispatch set data
-      // dispatch(setIsLoading(false));
-      // dispatch(setRefreshing(false));
+      dispatch(setIsLoading(false));
+      dispatch(setRefreshing(false));
+    } else {
+      dispatch(setIsLoading(false));
     }
 
-    // dispatch(setIsLoading(false));
-    // dispatch(setRefreshing(false));
     console.log(res);
   } catch (error) {
     console.log(error);
-    // dispatch(setIsLoading(false));
-    // dispatch(setRefreshing(false));
+    dispatch(setIsLoading(false));
+    dispatch(setRefreshing(false));
   }
 };
 

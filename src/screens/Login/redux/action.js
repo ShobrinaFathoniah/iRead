@@ -6,10 +6,9 @@ import axios from 'axios';
 import {navigate} from '../../../helpers/navigate';
 
 export const sendDataLogin = (dataUser, email, password) => async dispatch => {
-  // dispatch(setIsLoading(true));
-
   try {
     if (email && password) {
+      dispatch(setIsLoading(true));
       const res = await axios.post(`${BASE_URL}/auth/login`, dataUser);
 
       console.log(res, 'res');
@@ -20,19 +19,19 @@ export const sendDataLogin = (dataUser, email, password) => async dispatch => {
         dispatch(setToken(token));
         navigate('Home');
 
-        // dispatch(setIsLoading(false));
+        dispatch(setIsLoading(false));
       } else {
         Alert.alert('Pemberitahuan', 'Anda tidak dapat melakukan Login');
-        // dispatch(setIsLoading(false));
+        dispatch(setIsLoading(false));
       }
     } else {
       Alert.alert('Pemberitahuan', 'Error: Semua Field Wajib diisi');
-      // dispatch(setIsLoading(false));
+      dispatch(setIsLoading(false));
     }
   } catch (error) {
     Alert.alert('Pemberitahuan', `${error}`);
     console.log(error, 'error');
-    // dispatch(setIsLoading(false));
+    dispatch(setIsLoading(false));
   }
 };
 

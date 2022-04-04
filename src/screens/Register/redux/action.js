@@ -16,18 +16,22 @@ export const sendDataRegister =
         console.log(res.data.success, 'res');
 
         const success = res.data.success;
+
         if (success) {
           dispatch(saveDataRegister(dataUser));
-          navigation.navigate('Success Register');
           dispatch(setIsLoading(false));
+
+          navigation.navigate('Success Register');
         }
       } else {
         Alert.alert('Pemberitahuan', 'Error: Semua Field Wajib diisi');
+
         dispatch(setIsLoading(false));
       }
     } catch (error) {
       console.log(error);
       Alert.alert('Pemberitahuan', `${error}`);
+
       dispatch(setIsLoading(false));
     }
   };

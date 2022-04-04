@@ -96,7 +96,7 @@ const Detail = ({route, navigation}) => {
   };
 
   const onRefresh = () => {
-    // dispatch(setRefreshing(true));
+    dispatch(setRefreshing(true));
     getDetail();
   };
 
@@ -223,10 +223,9 @@ const Detail = ({route, navigation}) => {
 
   return (
     <ScrollView
-    // refreshControl={
-    //   <RefreshControl onRefresh={onRefresh} refreshing={refreshing} />
-    // }
-    >
+      refreshControl={
+        <RefreshControl onRefresh={onRefresh} refreshing={refreshing} />
+      }>
       <View style={styles.allButtons}>
         <View>
           <CircleButton
@@ -245,7 +244,7 @@ const Detail = ({route, navigation}) => {
         </View>
       </View>
 
-      {/* {LoadingBar(isLoading)} */}
+      {LoadingBar(isLoading)}
       {connection ? detailScreen() : NoConnection(connection)}
     </ScrollView>
   );

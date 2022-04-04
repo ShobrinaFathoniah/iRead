@@ -26,8 +26,6 @@ const Home = () => {
     state => state.global,
   );
 
-  const [setHeart, heart] = useState(false);
-
   const getDataBook = () => {
     dispatch(getDataBooks(dataToken));
   };
@@ -60,7 +58,7 @@ const Home = () => {
   }, []);
 
   const onRefresh = () => {
-    // dispatch(setRefreshing(true));
+    dispatch(setRefreshing(true));
     getDataBook();
   };
 
@@ -76,6 +74,8 @@ const Home = () => {
     return (
       <View>
         <Search />
+        {LoadingBar(isLoading)}
+
         <Recommended data={recommendedBooks} />
         {/* {LoadingBar(isLoading)} */}
 
@@ -87,12 +87,10 @@ const Home = () => {
 
   return (
     <ScrollView
-    // refreshControl={
-    //   <RefreshControl onRefresh={onRefresh} refreshing={refreshing} />
-    // }
-    >
+      refreshControl={
+        <RefreshControl onRefresh={onRefresh} refreshing={refreshing} />
+      }>
       <Header />
-      {/* {LoadingBar(isLoading)} */}
       {connection ? homeScreen() : NoConnection(connection)}
     </ScrollView>
   );

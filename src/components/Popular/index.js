@@ -23,6 +23,7 @@ const Popular = ({data}) => {
           price={item.price}
           publisher={item.publisher}
           rating={item.average_rating}
+          id_book={idBook}
         />
       </TouchableOpacity>
     );

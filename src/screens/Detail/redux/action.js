@@ -4,9 +4,8 @@ import {setIsLoading, setRefreshing} from '../../../store/globalAction';
 import axios from 'axios';
 
 export const getDataDetail = (dataToken, idBook) => async dispatch => {
-  // dispatch(setIsLoading(true));
-
   try {
+    dispatch(setIsLoading(true));
     const res = await axios.get(`${BASE_URL}/books/${idBook}`, {
       headers: {Authorization: `Bearer ${dataToken}`},
     });
@@ -18,13 +17,13 @@ export const getDataDetail = (dataToken, idBook) => async dispatch => {
 
     dispatch(setDetailData(res.data));
 
-    // dispatch(setIsLoading(false));
-    // dispatch(setRefreshing(false));
+    dispatch(setIsLoading(false));
+    dispatch(setRefreshing(false));
     // }
   } catch (error) {
     console.log(error);
-    // dispatch(setIsLoading(false));
-    // dispatch(setRefreshing(false));
+    dispatch(setIsLoading(false));
+    dispatch(setRefreshing(false));
   }
 };
 

@@ -19,6 +19,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useDispatch, useSelector} from 'react-redux';
 import {setHeart} from '../../store/globalAction';
 import {numberToIDR} from '../../helpers/numberToIDR';
+import {Notification} from '../../helpers/notification';
 // import {formatCurrency} from 'react-native-format-currency';
 
 const PopularCard = ({urlImage, title, price, rating, publisher, id_book}) => {
@@ -28,10 +29,25 @@ const PopularCard = ({urlImage, title, price, rating, publisher, id_book}) => {
   // const priceTooIDR = formatCurrency({amount: price, code: 'IDR'});
   const priceToIDR = numberToIDR(price);
 
-  const loved = () =>
-    heart && idBook
-      ? dispatch(setHeart({heart: false, idBook: ''}))
-      : dispatch(setHeart({heart: true, idBook: id_book}));
+  const loved = () => {
+    if (heart && idBook) {
+      dispatch(setHeart({heart: false, idBook: ''}));
+
+      Notification.sendNotifictaion(
+        '1',
+        'Unloved Book!',
+        `Kamu Batal menyukai Buku ${title}!`,
+      );
+    } else {
+      dispatch(setHeart({heart: true, idBook: id_book}));
+
+      Notification.sendNotifictaion(
+        '1',
+        'Loved Book!',
+        `Kamu menyukai Buku ${title}!`,
+      );
+    }
+  };
 
   return (
     <View style={styles.page}>

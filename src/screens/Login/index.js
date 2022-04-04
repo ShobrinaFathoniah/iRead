@@ -46,7 +46,7 @@ const Login = ({navigation}) => {
             />
           </View>
         </Forms>
-        {/* {LoadingBar(isLoading)} */}
+        {LoadingBar(isLoading)}
       </View>
     );
   };
