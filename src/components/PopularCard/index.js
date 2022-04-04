@@ -21,15 +21,17 @@ import {setHeart} from '../../store/globalAction';
 import {numberToIDR} from '../../helpers/numberToIDR';
 // import {formatCurrency} from 'react-native-format-currency';
 
-const PopularCard = ({urlImage, title, price, rating, publisher}) => {
+const PopularCard = ({urlImage, title, price, rating, publisher, id_book}) => {
   const dispatch = useDispatch();
-  const heart = useSelector(state => state.global.heart);
+  const {heart, idBook} = useSelector(state => state.global);
 
   // const priceTooIDR = formatCurrency({amount: price, code: 'IDR'});
   const priceToIDR = numberToIDR(price);
 
   const loved = () =>
-    heart ? dispatch(setHeart(false)) : dispatch(setHeart(true));
+    heart && idBook
+      ? dispatch(setHeart({heart: false, idBook: ''}))
+      : dispatch(setHeart({heart: true, idBook: id_book}));
 
   return (
     <View style={styles.page}>
@@ -57,7 +59,7 @@ const PopularCard = ({urlImage, title, price, rating, publisher}) => {
             <TouchableOpacity onPress={loved}>
               <AntDesign
                 style={styles.heart}
-                name={heart ? 'heart' : 'hearto'}
+                name={heart && idBook === id_book ? 'heart' : 'hearto'}
                 size={15}
                 color={RED_500}
               />

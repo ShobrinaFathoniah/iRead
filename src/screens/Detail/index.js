@@ -29,16 +29,19 @@ import {
 } from '../../helpers/colors';
 import axios from 'axios';
 import {BASE_URL} from '@env';
-import {setIsLoading, setRefreshing} from '../../store/globalAction';
+import {setHeart, setIsLoading, setRefreshing} from '../../store/globalAction';
 import {numberToIDR} from '../../helpers/numberToIDR';
+import {Notification} from '../../helpers/notification';
 
 const Detail = ({route, navigation}) => {
   const {params} = route.params;
-  const idBook = params.idBook;
+  const id_book = params.idBook;
 
   const dispatch = useDispatch();
   const {dataToken} = useSelector(state => state.login);
   const {detail} = useSelector(state => state.detailBook);
+  const {heart, idBook} = useSelector(state => state.global);
+
   const {refreshing, isLoading, connection} = useSelector(
     state => state.global,
   );
@@ -46,25 +49,7 @@ const Detail = ({route, navigation}) => {
   // const [detailData, setDetailData] = useState({});
 
   const getDetail = () => {
-    // dispatch(setIsLoading(true));
-    dispatch(getDataDetail(dataToken, idBook));
-    // try {
-    //   const res = await axios.get(`${BASE_URL}/books/${idBook}`, {
-    //     headers: {Authorization: `Bearer ${dataToken}`},
-    //   });
-    //   console.log(res, 'res');
-    //   // if (res.status === 200) {
-    //   console.log(res.data, 'res');
-    //   // dispatch(setDetailData(res.data));
-    //   // setDetailData(res.data);
-    //   dispatch(setIsLoading(false));
-    //   dispatch(setRefreshing(false));
-    //   // }
-    // } catch (error) {
-    //   console.log(error);
-    //   dispatch(setIsLoading(false));
-    //   dispatch(setRefreshing(false));
-    // }
+    dispatch(getDataDetail(dataToken, id_book));
   };
 
   useEffect(() => {
@@ -85,6 +70,29 @@ const Detail = ({route, navigation}) => {
         detail.stock_available
       } buku.`,
     });
+  };
+
+  const lovedBook = () => {
+    Notification.configure();
+    Notification.createChannel('1');
+
+    if (heart && idBook) {
+      dispatch(setHeart({heart: false, idBook: ''}));
+
+      Notification.sendNotifictaion(
+        '1',
+        'Unloved Book!',
+        `Kamu Batal menyukai Buku ${detail.title}!`,
+      );
+    } else {
+      dispatch(setHeart({heart: true, idBook: id_book}));
+
+      Notification.sendNotifictaion(
+        '1',
+        'Loved Book!',
+        `Kamu menyukai Buku ${detail.title}!`,
+      );
+    }
   };
 
   const onRefresh = () => {
@@ -230,7 +238,8 @@ const Detail = ({route, navigation}) => {
           <CircleButton
             color={RED_500}
             style={{marginEnd: moderateScale(10)}}
-            nameIcon="heart-o"
+            nameIcon={heart && idBook === id_book ? 'heart' : 'heart-o'}
+            onPress={lovedBook}
           />
           <CircleButton nameIcon="share" onPress={shareData} />
         </View>

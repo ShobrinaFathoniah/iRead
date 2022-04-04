@@ -7,6 +7,7 @@ import {
 
 const initialState = {
   heart: false,
+  idBook: '',
   isLoading: false,
   connection: true,
   refreshing: false,
@@ -18,6 +19,7 @@ export const globalReducer = (state = initialState, action) => {
       return {
         ...state,
         heart: action.heart,
+        idBook: action.idBook,
       };
     case SET_LOADING:
       return {

@@ -8,7 +8,8 @@ import {
 export const setHeart = data => {
   return {
     type: SET_HEART,
-    heart: data,
+    heart: data.heart,
+    idBook: data.idBook,
   };
 };
 
