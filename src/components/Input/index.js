@@ -14,6 +14,7 @@ const Input = ({
   secureTextEntry = false,
   style,
   placeholderTextColor = LIGHT_BLUE_600,
+  onSubmitEditing,
 }) => {
   const passedStyles = Array.isArray(style)
     ? Object.assign({}, ...style)
@@ -28,6 +29,7 @@ const Input = ({
         placeholder={placeholder}
         placeholderTextColor={placeholderTextColor}
         secureTextEntry={secureTextEntry}
+        onSubmitEditing={onSubmitEditing}
       />
     </View>
   );

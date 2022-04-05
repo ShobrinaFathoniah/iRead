@@ -24,5 +24,3 @@ const Root = () => {
 };
 
 export default Root;
-
-//ada props theme navigation

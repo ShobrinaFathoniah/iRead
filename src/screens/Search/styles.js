@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {widthPercentageToDP} from 'react-native-responsive-screen';
 import {moderateScale} from 'react-native-size-matters';
 import {LIGHT_BLUE_100_trans, RED_500} from '../../helpers/colors';

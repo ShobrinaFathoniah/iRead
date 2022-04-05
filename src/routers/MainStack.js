@@ -12,10 +12,6 @@ import {
 const Stack = createStackNavigator();
 
 const MainStack = () => {
-  // const {loading} = useSelector(state => state.global);
-  //if loading blabla -> bisa di root
-  //klu msh ga bisa bole dicompoonent tp pk state yg didlobalreducer
-
   return (
     <Stack.Navigator initialRouteName="Login">
       <Stack.Screen

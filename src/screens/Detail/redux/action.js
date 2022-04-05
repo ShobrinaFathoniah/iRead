@@ -11,15 +11,12 @@ export const getDataDetail = (dataToken, idBook) => async dispatch => {
     });
 
     console.log(res, 'res');
-
-    // if (res.status === 200) {
     console.log(res.data, 'res');
 
     dispatch(setDetailData(res.data));
 
     dispatch(setIsLoading(false));
     dispatch(setRefreshing(false));
-    // }
   } catch (error) {
     console.log(error);
     dispatch(setIsLoading(false));

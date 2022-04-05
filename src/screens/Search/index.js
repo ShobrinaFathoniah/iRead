@@ -62,6 +62,7 @@ const Search = () => {
             setSearch(value);
           }}
           value={search}
+          onSubmitEditing={() => getDataSearch(search)}
         />
         <TouchableOpacity onPress={() => getDataSearch(search)}>
           <Ionicons

@@ -2,7 +2,7 @@ import {View, BackHandler, Alert} from 'react-native';
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getDataBooks} from './redux/action';
-import {Header, LoadingBar, NoConnection, Search} from '../../components';
+import {Header, LoadingBar, NoConnection} from '../../components';
 import Popular from '../../components/Popular';
 import {setRefreshing} from '../../store/globalAction';
 import {setToken} from '../Login/redux/action';
@@ -87,7 +87,6 @@ const Home = ({navigation}) => {
   const homeScreen = () => {
     return (
       <View>
-        {/* <Search /> */}
         <Popular
           data1={popularBooks}
           data2={recommendedBooks}

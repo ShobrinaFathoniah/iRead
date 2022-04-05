@@ -11,8 +11,6 @@ import {
 import {useDispatch, useSelector} from 'react-redux';
 import {sendDataRegister} from './redux/action';
 import {checkEmail, isValidPassword} from '../../helpers/validationData';
-import {RED_500} from '../../helpers/colors';
-import {moderateScale} from 'react-native-size-matters';
 import styles from './style';
 
 const Register = ({navigation}) => {

@@ -10,7 +10,6 @@ import {
   DARK_PURPLE_500,
   LIGHT_BLUE_300,
   LIGHT_BLUE_600,
-  LIGTH_BLUE_500,
 } from '../../helpers/colors';
 
 const styles = StyleSheet.create({
@@ -120,9 +119,9 @@ const styles = StyleSheet.create({
   },
   textSynopsis: {
     marginTop: moderateScale(10),
-    fontSize: moderateScale(15.5),
+    fontSize: moderateScale(14),
     textAlign: 'justify',
-    letterSpacing: moderateScale(1.8),
+    letterSpacing: moderateScale(0.7),
     color: DARK_PURPLE_300,
     marginHorizontal: moderateScale(10),
   },

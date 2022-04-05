@@ -11,7 +11,6 @@ import {useDispatch, useSelector} from 'react-redux';
 import {getDataDetail} from './redux/action';
 import {
   CircleButton,
-  Courgette,
   LibreBaskerville,
   LoadingBar,
   NoConnection,
@@ -202,9 +201,9 @@ const Detail = ({route, navigation}) => {
           <LibreBaskerville style={[styles.text, styles.titleSynopsis]}>
             Synopsis
           </LibreBaskerville>
-          <Courgette style={[styles.text, styles.textSynopsis]}>
+          <LibreBaskerville style={[styles.text, styles.textSynopsis]}>
             {detail.synopsis}
-          </Courgette>
+          </LibreBaskerville>
         </View>
       </View>
     );

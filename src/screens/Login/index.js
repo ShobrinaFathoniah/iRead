@@ -14,22 +14,14 @@ const Login = ({navigation}) => {
   const dispatch = useDispatch();
 
   const dataUser = {
-    email: email,
-    password: password,
+    email: email, //loonapopo@ymail.com
+    password: password, //loona123
   };
 
-  console.log(email, 'email');
-  console.log(password, 'password');
-  console.log(dataEmail, 'dataEmail');
-  console.log(dataPassword);
-  console.log(dataEmail.length, 'true?');
-
-  const setDataLogin = (dataEmail, dataPassword) => {
-    if (dataEmail.length > 0 && dataPassword.length > 0) {
-      setEmail(dataEmail);
-      setPassword(dataPassword);
-    }
-  };
+  // const setDataLogin = (dataEmail, dataPassword) => {
+  //   setEmail(dataEmail);
+  //   setPassword(dataPassword);
+  // };
 
   const tokenChecker = async () => {
     try {
@@ -43,14 +35,14 @@ const Login = ({navigation}) => {
     }
   };
 
+  useEffect(() => {
+    // setDataLogin(dataEmail, dataPassword);
+    tokenChecker();
+  }, []);
+
   const login = () => {
     dispatch(sendDataLogin(dataUser, email, password));
   };
-
-  useEffect(() => {
-    tokenChecker();
-    setDataLogin(dataEmail, dataPassword);
-  }, []);
 
   const goToRegister = () => navigation.navigate('Register');
 
@@ -61,12 +53,14 @@ const Login = ({navigation}) => {
           <View>
             <Input
               onChangeText={value => setEmail(value)}
-              value={dataEmail ? dataEmail : email}
+              // value={dataEmail ? dataEmail : email}
+              value={email}
               placeholder="Email"
             />
             <Input
               onChangeText={value => setPassword(value)}
-              value={dataPassword ? dataPassword : password}
+              // value={dataPassword ? dataPassword : password}
+              value={password}
               placeholder="Password"
               secureTextEntry={true}
             />

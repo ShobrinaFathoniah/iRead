@@ -7,9 +7,6 @@ import {navigate} from '../../../helpers/navigate';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const sendDataLogin = (dataUser, email, password) => async dispatch => {
-  // console.log(email, 'email');
-  // console.log(password, 'password');
-
   try {
     if (email && password) {
       dispatch(setIsLoading(true));

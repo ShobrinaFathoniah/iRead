@@ -17,10 +17,3 @@ const persistedReducer = persistReducer(persistConfig, allReducers);
 
 export const store = createStore(allReducers, {}, allMiddlewares);
 // export const persistedStore = persistStore(store);
-
-//asyncstorage -> ga perlu link
-//redux-persist
-
-//buka store
-//import persist => persistReducer, persistStore
-//blacklist/whitelist: ["",""] di config persist

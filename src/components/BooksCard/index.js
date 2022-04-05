@@ -1,14 +1,13 @@
 import {StyleSheet, Image, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {moderateScale} from 'react-native-size-matters';
-import {DARK_PURPLE_500, LIGTH_BLUE_500, WHITE} from '../../helpers/colors';
+import {LIGTH_BLUE_500} from '../../helpers/colors';
 
-const BooksCard = ({urlImage, title, onPress}) => {
+const BooksCard = ({urlImage, onPress}) => {
   return (
     <View style={{alignItems: 'center', marginBottom: moderateScale(10)}}>
       <TouchableOpacity style={styles.container} onPress={onPress}>
         <Image style={styles.image} source={{uri: urlImage}} />
-        {/* <LibreBaskerville style={styles.text}>{title}</LibreBaskerville> */}
       </TouchableOpacity>
       <View style={styles.bawahan}></View>
     </View>

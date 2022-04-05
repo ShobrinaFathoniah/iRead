@@ -26,6 +26,9 @@ const PopularCard = ({urlImage, title, price, rating, publisher, id_book}) => {
   const priceToIDR = numberToIDR(price);
 
   const loved = () => {
+    Notification.configure();
+    Notification.createChannel('1');
+
     if (heart && idBook) {
       dispatch(setHeart({heart: false, idBook: ''}));
 
