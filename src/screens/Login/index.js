@@ -6,11 +6,10 @@ import {sendDataLogin, setToken} from './redux/action';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Login = ({navigation}) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const {dataEmail, dataPassword} = useSelector(state => state.register);
   const {isLoading, connection} = useSelector(state => state.global);
-  const {dataToken} = useSelector(state => state.login);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const dispatch = useDispatch();
 
@@ -19,9 +18,18 @@ const Login = ({navigation}) => {
     password: password,
   };
 
-  // if (dataToken) {
-  //   navigation.navigate('Home');
-  // }
+  console.log(email, 'email');
+  console.log(password, 'password');
+  console.log(dataEmail, 'dataEmail');
+  console.log(dataPassword);
+  console.log(dataEmail.length, 'true?');
+
+  const setDataLogin = (dataEmail, dataPassword) => {
+    if (dataEmail.length > 0 && dataPassword.length > 0) {
+      setEmail(dataEmail);
+      setPassword(dataPassword);
+    }
+  };
 
   const tokenChecker = async () => {
     try {
@@ -41,6 +49,7 @@ const Login = ({navigation}) => {
 
   useEffect(() => {
     tokenChecker();
+    setDataLogin(dataEmail, dataPassword);
   }, []);
 
   const goToRegister = () => navigation.navigate('Register');
@@ -52,12 +61,12 @@ const Login = ({navigation}) => {
           <View>
             <Input
               onChangeText={value => setEmail(value)}
-              value={email}
+              value={dataEmail ? dataEmail : email}
               placeholder="Email"
             />
             <Input
               onChangeText={value => setPassword(value)}
-              value={password}
+              value={dataPassword ? dataPassword : password}
               placeholder="Password"
               secureTextEntry={true}
             />

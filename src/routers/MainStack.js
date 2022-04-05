@@ -1,7 +1,13 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
-import {Detail, Home, Login, Register, SuccessRegister} from '../screens';
-import {useSelector} from 'react-redux';
+import {
+  Detail,
+  Home,
+  Login,
+  Register,
+  SearchScreen,
+  SuccessRegister,
+} from '../screens';
 
 const Stack = createStackNavigator();
 
@@ -35,6 +41,11 @@ const MainStack = () => {
       <Stack.Screen
         name="Detail"
         component={Detail}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Search"
+        component={SearchScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

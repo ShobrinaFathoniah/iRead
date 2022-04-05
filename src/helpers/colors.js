@@ -17,3 +17,4 @@ export const YELLOW_200 = '#F1E1A6';
 export const YELLOW_500 = '#dbcc26';
 
 export const RED_500 = '#c4131e';
+export const RED_500_trans = '#c4131e99';

@@ -7,6 +7,9 @@ import {navigate} from '../../../helpers/navigate';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const sendDataLogin = (dataUser, email, password) => async dispatch => {
+  // console.log(email, 'email');
+  // console.log(password, 'password');
+
   try {
     if (email && password) {
       dispatch(setIsLoading(true));
@@ -34,6 +37,13 @@ export const sendDataLogin = (dataUser, email, password) => async dispatch => {
     Alert.alert('Pemberitahuan', `${error}`);
     console.log(error, 'error');
     dispatch(setIsLoading(false));
+
+    if ((error.message = 'Request failed with status code 401')) {
+      Alert.alert(
+        'Pemberitahuan',
+        'Terdapat kesalahan Username atau Password!',
+      );
+    }
   }
 };
 

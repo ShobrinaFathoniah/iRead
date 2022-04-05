@@ -7,7 +7,7 @@ import Recommended from './Recommended';
 import BooksCard from './BooksCard';
 import Popular from './Popular';
 import PopularCard from './PopularCard';
-import Search from './Search';
+import SearchBar from './Search';
 import CircleButton from './CircleButton';
 import Rating from './Rating';
 
@@ -22,7 +22,7 @@ export {
   BooksCard,
   Popular,
   PopularCard,
-  Search,
+  SearchBar,
   CircleButton,
   Rating,
 };

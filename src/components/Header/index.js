@@ -5,7 +5,13 @@ import {BLACK, LIGHT_BLUE_300} from '../../helpers/colors';
 import {PassionConflict} from '../Fonts';
 import CircleButton from '../CircleButton';
 
-const Header = ({button = false, name}) => {
+const Header = ({
+  button = false,
+  nameIcon,
+  onPressButton,
+  onPressSearch,
+  search = false,
+}) => {
   return (
     <View
       style={[
@@ -14,8 +20,23 @@ const Header = ({button = false, name}) => {
       ]}>
       <StatusBar barStyle="dark-content" backgroundColor={LIGHT_BLUE_300} />
       <PassionConflict style={styles.textAppName}>iRead</PassionConflict>
+      <View style={{flexDirection: 'row'}}>
+        {search ? (
+          <CircleButton
+            nameIcon="search1"
+            style={styles.button}
+            onPress={onPressSearch}
+          />
+        ) : null}
 
-      {button ? <CircleButton name={name} style={styles.button} /> : null}
+        {button ? (
+          <CircleButton
+            nameIcon={nameIcon}
+            style={styles.button}
+            onPress={onPressButton}
+          />
+        ) : null}
+      </View>
     </View>
   );
 };
@@ -33,6 +54,7 @@ const styles = StyleSheet.create({
     margin: moderateScale(10),
     color: BLACK,
     letterSpacing: moderateScale(2),
+    textAlign: 'center',
   },
   button: {
     marginRight: moderateScale(10),

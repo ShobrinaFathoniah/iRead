@@ -3,7 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import MainStack from './MainStack';
 import {useDispatch} from 'react-redux';
 import NetInfo from '@react-native-community/netinfo';
-import {setConnection, setRefreshing} from '../store/globalAction';
+import {setConnection} from '../store/globalAction';
 import {navigationRef} from '../helpers/navigate';
 
 const Root = () => {
@@ -14,7 +14,6 @@ const Root = () => {
     console.log('Is connected?', state.isConnected);
 
     dispatch(setConnection(state.isConnected));
-    // dispatch(setRefreshing(false));
   });
 
   return (

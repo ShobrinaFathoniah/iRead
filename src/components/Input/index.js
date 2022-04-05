@@ -13,6 +13,7 @@ const Input = ({
   placeholder,
   secureTextEntry = false,
   style,
+  placeholderTextColor = LIGHT_BLUE_600,
 }) => {
   const passedStyles = Array.isArray(style)
     ? Object.assign({}, ...style)
@@ -25,7 +26,7 @@ const Input = ({
         onChangeText={onChangeText}
         value={value}
         placeholder={placeholder}
-        placeholderTextColor={LIGHT_BLUE_600}
+        placeholderTextColor={placeholderTextColor}
         secureTextEntry={secureTextEntry}
       />
     </View>

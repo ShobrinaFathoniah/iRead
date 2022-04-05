@@ -1,35 +1,27 @@
-import {StyleSheet, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React, {useState} from 'react';
 import Input from '../Input';
 import {moderateScale} from 'react-native-size-matters';
-import {LIGHT_BLUE_100, LIGHT_BLUE_100_trans} from '../../helpers/colors';
+import {LIGHT_BLUE_100_trans, LIGTH_BLUE_500} from '../../helpers/colors';
 import {widthPercentageToDP} from 'react-native-responsive-screen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {navigate} from '../../helpers/navigate';
 
 const Search = () => {
   const [search, setSearch] = useState('');
 
-  const goToSearchPage = () => {
-    navigate('Search', {
-      params: {search},
-    });
-  };
   return (
     <View style={styles.searchBar}>
+      <Ionicons
+        style={styles.searchIcon}
+        name="search"
+        size={30}
+        color={LIGTH_BLUE_500}
+      />
       <Input
         style={styles.input}
         onChangeText={value => setSearch(value)}
         value={search}
       />
-      <TouchableOpacity onPress={goToSearchPage}>
-        <Ionicons
-          style={styles.searchIcon}
-          name="search"
-          size={40}
-          color={LIGHT_BLUE_100}
-        />
-      </TouchableOpacity>
     </View>
   );
 };
@@ -42,14 +34,17 @@ const styles = StyleSheet.create({
     borderRadius: moderateScale(3),
     marginTop: moderateScale(15),
     flexDirection: 'row',
+    alignSelf: 'center',
   },
   input: {
     backgroundColor: LIGHT_BLUE_100_trans,
     borderBottomWidth: moderateScale(0),
-    width: widthPercentageToDP(85),
+    width: widthPercentageToDP(70),
+    paddingLeft: moderateScale(45),
   },
   searchIcon: {
     alignItems: 'center',
-    marginTop: moderateScale(3),
+    marginRight: moderateScale(-35),
+    marginTop: moderateScale(7),
   },
 });

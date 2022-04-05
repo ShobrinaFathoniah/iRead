@@ -23,6 +23,13 @@ export const sendDataRegister =
 
           navigation.navigate('Success Register');
         }
+
+        if (res.status === 400) {
+          Alert.alert(
+            'Pemberitahuan',
+            'Error: Perbaiki kembali Email dan Passwordmu!',
+          );
+        }
       } else {
         Alert.alert('Pemberitahuan', 'Error: Semua Field Wajib diisi');
 

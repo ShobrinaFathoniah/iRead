@@ -7,17 +7,7 @@ import {FlatList} from 'react-native-gesture-handler';
 import BooksCard from '../BooksCard';
 import {navigate} from '../../helpers/navigate';
 
-const Recommended = ({data}) => {
-  const header = () => {
-    return (
-      <LibreBaskerville style={styles.bab}>Recommended Books</LibreBaskerville>
-    );
-  };
-
-  const footer = () => {
-    return <LibreBaskerville>Finish</LibreBaskerville>;
-  };
-
+const Recommended = ({data, hideTitle}) => {
   const booksCard = ({item}) => {
     const idBook = item.id;
     return (
@@ -37,7 +27,12 @@ const Recommended = ({data}) => {
 
   return (
     <View>
-      <LibreBaskerville style={styles.bab}>Recommended Books</LibreBaskerville>
+      {hideTitle ? null : (
+        <LibreBaskerville style={styles.bab}>
+          Recommended Books
+        </LibreBaskerville>
+      )}
+
       <FlatList
         data={data}
         horizontal={true}

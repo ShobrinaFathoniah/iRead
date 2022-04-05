@@ -218,7 +218,7 @@ const Detail = ({route, navigation}) => {
       <View style={styles.allButtons}>
         <View>
           <CircleButton
-            nameIcon="arrow-left"
+            nameIcon="arrowleft"
             onPress={() => navigation.goBack()}
           />
         </View>
@@ -226,10 +226,10 @@ const Detail = ({route, navigation}) => {
           <CircleButton
             color={RED_500}
             style={{marginEnd: moderateScale(10)}}
-            nameIcon={heart && idBook === id_book ? 'heart' : 'heart-o'}
+            nameIcon={heart && idBook === id_book ? 'heart' : 'hearto'}
             onPress={lovedBook}
           />
-          <CircleButton nameIcon="share" onPress={shareData} />
+          <CircleButton nameIcon="sharealt" onPress={shareData} />
         </View>
       </View>
 

@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   },
   containerAllBookInfo: {
     flexDirection: 'row',
-    marginTop: moderateScale(10),
+    marginTop: moderateScale(5),
     paddingVertical: moderateScale(10),
   },
   containerImage: {
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
     letterSpacing: moderateScale(1.8),
     color: DARK_PURPLE_300,
-    marginHorizontal: moderateScale(5),
+    marginHorizontal: moderateScale(10),
   },
 });
 

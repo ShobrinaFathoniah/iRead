@@ -1,8 +1,19 @@
 import {View, ScrollView} from 'react-native';
 import React, {useState} from 'react';
-import {Forms, Header, Input, LoadingBar, NoConnection} from '../../components';
+import {
+  Forms,
+  Header,
+  Input,
+  LibreBaskerville,
+  LoadingBar,
+  NoConnection,
+} from '../../components';
 import {useDispatch, useSelector} from 'react-redux';
 import {sendDataRegister} from './redux/action';
+import {checkEmail, isValidPassword} from '../../helpers/validationData';
+import {RED_500} from '../../helpers/colors';
+import {moderateScale} from 'react-native-size-matters';
+import styles from './style';
 
 const Register = ({navigation}) => {
   const [name, setName] = useState('');
@@ -22,6 +33,28 @@ const Register = ({navigation}) => {
     dispatch(sendDataRegister(dataUser, email, password, name, navigation));
   };
 
+  console.log(email);
+  const emailChecker = email => {
+    if (!checkEmail(email) && email.length > 0) {
+      return (
+        <LibreBaskerville style={styles.erorText}>
+          Email yang Anda masukan Tidak Valid
+        </LibreBaskerville>
+      );
+    }
+  };
+
+  console.log(password);
+  const passwordChecker = password => {
+    if (!isValidPassword(password) && password.length > 0) {
+      return (
+        <LibreBaskerville style={[styles.erorText, styles.passwordError]}>
+          Password Harus Lebih dari 8 dan Terdapat Angka
+        </LibreBaskerville>
+      );
+    }
+  };
+
   const goToLogin = () => navigation.navigate('Login');
 
   const registerScreen = () => {
@@ -29,6 +62,7 @@ const Register = ({navigation}) => {
       <View>
         <Forms type="Register" onPressButton={register} onPressText={goToLogin}>
           <View>
+            {emailChecker(email)}
             <Input
               onChangeText={value => setEmail(value)}
               value={email}
@@ -39,6 +73,7 @@ const Register = ({navigation}) => {
               value={name}
               placeholder="Name"
             />
+            {passwordChecker(password)}
             <Input
               onChangeText={value => setPassword(value)}
               value={password}

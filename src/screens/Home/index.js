@@ -1,24 +1,16 @@
-import {
-  RefreshControl,
-  ScrollView,
-  View,
-  BackHandler,
-  Alert,
-} from 'react-native';
+import {View, BackHandler, Alert} from 'react-native';
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getDataBooks} from './redux/action';
-import {
-  Header,
-  LoadingBar,
-  NoConnection,
-  Recommended,
-  Search,
-} from '../../components';
+import {Header, LoadingBar, NoConnection, Search} from '../../components';
 import Popular from '../../components/Popular';
 import {setRefreshing} from '../../store/globalAction';
+import {setToken} from '../Login/redux/action';
+import {navigate} from '../../helpers/navigate';
+import {moderateScale} from 'react-native-size-matters';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const Home = () => {
+const Home = ({navigation}) => {
   const dispatch = useDispatch();
   const {dataToken} = useSelector(state => state.login);
   const {data} = useSelector(state => state.home);
@@ -29,6 +21,8 @@ const Home = () => {
   const getDataBook = () => {
     dispatch(getDataBooks(dataToken));
   };
+
+  console.log(data.length);
 
   // tombol exit
   const exit = () => {
@@ -62,6 +56,26 @@ const Home = () => {
     getDataBook();
   };
 
+  const logout = async () => {
+    await AsyncStorage.setItem('@token', '');
+    Alert.alert('Hold on!', 'Do you want to logout?', [
+      {
+        text: 'Cancel',
+        onPress: () => null,
+        style: 'cancel',
+      },
+      {
+        text: 'YES',
+        onPress: () => {
+          dispatch(setToken(''));
+          navigate('Login');
+        },
+      },
+    ]);
+  };
+
+  const goToSearch = () => navigation.navigate('Search');
+
   const popularBooks = data.slice(0, 20);
 
   const recommendedBooks = data
@@ -73,23 +87,29 @@ const Home = () => {
   const homeScreen = () => {
     return (
       <View>
-        <Search />
-        {LoadingBar(isLoading)}
-
-        <Recommended data={recommendedBooks} />
-        <Popular data={popularBooks} />
+        {/* <Search /> */}
+        <Popular
+          data1={popularBooks}
+          data2={recommendedBooks}
+          onRefresh={onRefresh}
+          refreshing={refreshing}
+        />
       </View>
     );
   };
 
   return (
-    <ScrollView
-      refreshControl={
-        <RefreshControl onRefresh={onRefresh} refreshing={refreshing} />
-      }>
-      <Header />
+    <View style={{flex: 1, marginBottom: moderateScale(90)}}>
+      <Header
+        button={true}
+        nameIcon="logout"
+        onPressButton={logout}
+        search={true}
+        onPressSearch={goToSearch}
+      />
+      {LoadingBar(isLoading)}
       {connection ? homeScreen() : NoConnection(connection)}
-    </ScrollView>
+    </View>
   );
 };
 
