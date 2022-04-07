@@ -10,7 +10,6 @@ const Login = ({navigation}) => {
   const {isLoading, connection} = useSelector(state => state.global);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const [dataUser, setDataUser] = useState({});
 
   const dispatch = useDispatch();
 

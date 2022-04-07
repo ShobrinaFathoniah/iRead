@@ -2,7 +2,13 @@ import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {Courgette, LibreBaskerville} from '../../components';
 import {moderateScale} from 'react-native-size-matters';
-import {LIGHT_BLUE_300, LIGHT_BLUE_600, WHITE} from '../../helpers/colors';
+import {
+  DARK_PURPLE_100,
+  DARK_PURPLE_300,
+  DARK_PURPLE_300_trans,
+  DARK_PURPLE_500,
+  WHITE,
+} from '../../helpers/colors';
 import Feather from 'react-native-vector-icons/Feather';
 
 const SuccessRegister = ({navigation}) => {
@@ -15,7 +21,7 @@ const SuccessRegister = ({navigation}) => {
         style={styles.check}
         name="check-circle"
         size={150}
-        color={LIGHT_BLUE_300}
+        color={DARK_PURPLE_100}
       />
       <LibreBaskerville style={styles.textMessage}>
         We sent email verification to your email, Please Check It!
@@ -37,16 +43,16 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(28),
     alignSelf: 'center',
     marginTop: moderateScale(60),
-    color: LIGHT_BLUE_600,
+    color: DARK_PURPLE_500,
   },
   check: {
     alignSelf: 'center',
-    marginTop: moderateScale(140),
+    marginTop: moderateScale(100),
   },
   textMessage: {
     fontSize: moderateScale(19),
-    marginTop: moderateScale(40),
-    color: LIGHT_BLUE_600,
+    marginTop: moderateScale(50),
+    color: DARK_PURPLE_300,
     textAlign: 'center',
     padding: moderateScale(5),
   },
@@ -54,7 +60,7 @@ const styles = StyleSheet.create({
     padding: moderateScale(10),
     borderRadius: moderateScale(3),
     alignSelf: 'center',
-    backgroundColor: LIGHT_BLUE_300,
+    backgroundColor: DARK_PURPLE_300_trans,
     margin: moderateScale(10),
     width: moderateScale(260),
     marginTop: moderateScale(60),

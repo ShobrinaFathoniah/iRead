@@ -1,10 +1,6 @@
 import {StyleSheet, TextInput, View} from 'react-native';
 import React from 'react';
-import {
-  LIGHT_BLUE_300,
-  LIGHT_BLUE_600,
-  LIGTH_BLUE_500,
-} from '../../helpers/colors';
+import {DARK_PURPLE_300, DARK_PURPLE_500} from '../../helpers/colors';
 import {moderateScale} from 'react-native-size-matters';
 
 const Input = ({
@@ -13,7 +9,7 @@ const Input = ({
   placeholder,
   secureTextEntry = false,
   style,
-  placeholderTextColor = LIGHT_BLUE_600,
+  placeholderTextColor = DARK_PURPLE_500,
   onSubmitEditing,
 }) => {
   const passedStyles = Array.isArray(style)
@@ -44,9 +40,9 @@ const styles = StyleSheet.create({
     marginBottom: moderateScale(12),
     borderBottomWidth: moderateScale(1),
     padding: moderateScale(10),
-    borderColor: LIGHT_BLUE_300,
+    borderColor: DARK_PURPLE_300,
     borderRadius: moderateScale(5),
-    color: LIGTH_BLUE_500,
+    color: DARK_PURPLE_500,
   },
   containerInput: {
     alignSelf: 'center',

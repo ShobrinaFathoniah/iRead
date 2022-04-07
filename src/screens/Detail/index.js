@@ -18,7 +18,11 @@ import {
 } from '../../components';
 import styles from './style';
 import {moderateScale} from 'react-native-size-matters';
-import {LIGHT_BLUE_300, LIGHT_BLUE_600, RED_500} from '../../helpers/colors';
+import {
+  DARK_PURPLE_300_trans,
+  LIGHT_BLUE_600,
+  RED_500,
+} from '../../helpers/colors';
 import {setHeart, setRefreshing} from '../../store/globalAction';
 import {numberToIDR} from '../../helpers/numberToIDR';
 import {Notification} from '../../helpers/notification';
@@ -152,7 +156,11 @@ const Detail = ({route, navigation}) => {
               </LibreBaskerville>
 
               <LibreBaskerville
-                style={[styles.text, styles.textSold, {color: LIGHT_BLUE_300}]}>
+                style={[
+                  styles.text,
+                  styles.textSold,
+                  {color: DARK_PURPLE_300_trans},
+                ]}>
                 |
               </LibreBaskerville>
 
@@ -194,7 +202,7 @@ const Detail = ({route, navigation}) => {
             </LibreBaskerville>
           </View>
         </View>
-
+        {/* ssesuain sama atasnya */}
         {buttonBuy(stock)}
 
         <View style={styles.containerOverview}>
@@ -204,6 +212,7 @@ const Detail = ({route, navigation}) => {
             Synopsis
           </LibreBaskerville>
           <View style={styles.synopsisContainer}>
+            {/* rapihin */}
             <LibreBaskerville style={[styles.text, styles.textSynopsis]}>
               {detail.synopsis}
             </LibreBaskerville>

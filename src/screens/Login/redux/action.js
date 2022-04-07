@@ -37,6 +37,7 @@ export const sendDataLogin = dataUser => async dispatch => {
     dispatch(setIsLoading(false));
 
     if ((error.message = 'Request failed with status code 401')) {
+      //terlalu spesifik
       Alert.alert(
         'Pemberitahuan',
         'Terdapat kesalahan Username atau Password!',

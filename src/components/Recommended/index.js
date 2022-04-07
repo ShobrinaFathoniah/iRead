@@ -2,7 +2,7 @@ import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {LibreBaskerville} from '../Fonts';
 import {moderateScale} from 'react-native-size-matters';
-import {LIGHT_BLUE_600, YELLOW_500} from '../../helpers/colors';
+import {DARK_PURPLE_500, YELLOW_500} from '../../helpers/colors';
 import {FlatList} from 'react-native-gesture-handler';
 import BooksCard from '../BooksCard';
 import {navigate} from '../../helpers/navigate';
@@ -68,7 +68,7 @@ export default Recommended;
 const styles = StyleSheet.create({
   bab: {
     fontSize: moderateScale(20),
-    color: LIGHT_BLUE_600,
+    color: DARK_PURPLE_500,
     marginStart: moderateScale(15),
   },
 });

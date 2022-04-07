@@ -7,7 +7,6 @@ import {
 import {moderateScale} from 'react-native-size-matters';
 import {
   DARK_PURPLE_500,
-  LIGHT_BLUE_600,
   RED_500,
   WHITE,
   YELLOW_200,
@@ -108,7 +107,7 @@ const styles = StyleSheet.create({
   text: {
     marginHorizontal: moderateScale(5),
     marginBottom: moderateScale(4),
-    color: LIGHT_BLUE_600,
+    color: DARK_PURPLE_500,
   },
   textTitle: {
     fontSize: moderateScale(12),

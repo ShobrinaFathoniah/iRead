@@ -3,8 +3,8 @@ import React from 'react';
 import {moderateScale} from 'react-native-size-matters';
 import {
   BLACK,
-  LIGHT_BLUE_300,
-  LIGHT_BLUE_600,
+  DARK_PURPLE_300,
+  DARK_PURPLE_500,
   WHITE,
 } from '../../helpers/colors';
 import {loginPic, registerPic} from '../../assets';
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     padding: moderateScale(10),
     borderRadius: moderateScale(3),
     alignSelf: 'center',
-    backgroundColor: LIGHT_BLUE_300,
+    backgroundColor: DARK_PURPLE_300,
     margin: moderateScale(10),
     width: moderateScale(260),
   },
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: moderateScale(12),
-    color: LIGHT_BLUE_600,
+    color: DARK_PURPLE_500,
     marginStart: moderateScale(10),
   },
   containerTextHelper: {
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   title: {
-    color: LIGHT_BLUE_600,
+    color: DARK_PURPLE_500,
     alignSelf: 'center',
     fontSize: moderateScale(32),
     letterSpacing: moderateScale(0.5),

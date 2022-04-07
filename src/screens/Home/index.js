@@ -2,16 +2,14 @@ import {View, BackHandler, Alert} from 'react-native';
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getDataBooks} from './redux/action';
-import {Header, LoadingBar, NoConnection} from '../../components';
+import {NoConnection} from '../../components';
 import Popular from '../../components/Popular';
 import {setRefreshing} from '../../store/globalAction';
 import {setToken} from '../Login/redux/action';
 import {navigate} from '../../helpers/navigate';
-import {moderateScale} from 'react-native-size-matters';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {getTimeNow} from '../../helpers/timeNow';
 
-const Home = ({navigation}) => {
+const Home = ({}) => {
   const dispatch = useDispatch();
   const {dataToken} = useSelector(state => state.login);
   const {data} = useSelector(state => state.home);

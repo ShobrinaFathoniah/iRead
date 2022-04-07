@@ -8,7 +8,9 @@ export const LIGTH_BLUE_500 = '#0091ab';
 export const LIGHT_BLUE_600 = '#006275';
 
 export const DARK_PURPLE_100 = '#8180b7';
+export const DARK_PURPLE_100_trans = '#8180b770';
 export const DARK_PURPLE_300 = '#535487';
+export const DARK_PURPLE_300_trans = '#53548799';
 export const DARK_PURPLE_500 = '#272b5a';
 
 export const PURPLE = '#CB9BF1';

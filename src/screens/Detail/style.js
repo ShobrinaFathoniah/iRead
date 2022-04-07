@@ -6,12 +6,9 @@ import {
 import {moderateScale} from 'react-native-size-matters';
 import {
   BLACK,
-  DARK_PURPLE_300,
+  DARK_PURPLE_100_trans,
   DARK_PURPLE_500,
-  LIGHT_BLUE_100_trans,
   LIGHT_BLUE_300,
-  LIGHT_BLUE_600,
-  LIGTH_BLUE_500,
   WHITE,
 } from '../../helpers/colors';
 
@@ -26,7 +23,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   text: {
-    color: LIGHT_BLUE_600,
+    color: DARK_PURPLE_500,
     fontSize: moderateScale(12),
     letterSpacing: moderateScale(0.7),
   },
@@ -124,11 +121,11 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(14),
     textAlign: 'justify',
     letterSpacing: moderateScale(0.7),
-    color: LIGHT_BLUE_600,
+    color: DARK_PURPLE_500,
     marginHorizontal: moderateScale(10),
   },
   synopsisContainer: {
-    borderColor: LIGHT_BLUE_100_trans,
+    borderColor: DARK_PURPLE_100_trans,
     marginVertical: moderateScale(10),
     borderWidth: moderateScale(0.5),
     elevation: moderateScale(5),

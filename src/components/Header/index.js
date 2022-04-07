@@ -1,7 +1,7 @@
 import {StyleSheet, View, StatusBar} from 'react-native';
 import React from 'react';
 import {moderateScale} from 'react-native-size-matters';
-import {BLACK, LIGHT_BLUE_300} from '../../helpers/colors';
+import {BLACK, DARK_PURPLE_100} from '../../helpers/colors';
 import {PassionConflict} from '../Fonts';
 import CircleButton from '../CircleButton';
 
@@ -22,7 +22,7 @@ const Header = ({
           borderBottomStartRadius: radiusBottom ? 150 : 0,
         },
       ]}>
-      <StatusBar barStyle="dark-content" backgroundColor={LIGHT_BLUE_300} />
+      <StatusBar barStyle="dark-content" backgroundColor={DARK_PURPLE_100} />
       <PassionConflict style={styles.textAppName}>{text}</PassionConflict>
       {button ? (
         <CircleButton
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   page: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: LIGHT_BLUE_300,
+    backgroundColor: DARK_PURPLE_100,
   },
   textAppName: {
     fontSize: moderateScale(42),

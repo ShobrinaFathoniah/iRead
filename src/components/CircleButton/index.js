@@ -1,13 +1,17 @@
 import {StyleSheet, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {moderateScale} from 'react-native-size-matters';
-import {LIGHT_BLUE_600, WHITE} from '../../helpers/colors';
+import {
+  DARK_PURPLE_300_trans,
+  DARK_PURPLE_500,
+  WHITE,
+} from '../../helpers/colors';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const CircleButton = ({
   style,
   nameIcon,
-  color = LIGHT_BLUE_600,
+  color = DARK_PURPLE_500,
   size = 20,
   onPress,
 }) => {
@@ -34,5 +38,7 @@ const styles = StyleSheet.create({
     backgroundColor: WHITE,
     alignItems: 'center',
     justifyContent: 'center',
+    borderColor: DARK_PURPLE_300_trans,
+    borderWidth: moderateScale(1),
   },
 });

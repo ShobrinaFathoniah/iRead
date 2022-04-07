@@ -11,7 +11,7 @@ import {
 import {navigate} from '../../helpers/navigate';
 import styles from './styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {LIGHT_BLUE_600, LIGTH_BLUE_500} from '../../helpers/colors';
+import {DARK_PURPLE_500} from '../../helpers/colors';
 import {useDispatch, useSelector} from 'react-redux';
 import axios from 'axios';
 import {BASE_URL} from '@env';
@@ -21,7 +21,6 @@ const Search = () => {
   const [search, setSearch] = useState('');
   const [dataSearch, setDataSearch] = useState([]);
 
-  const goToHome = () => navigate('Home');
   const dispatch = useDispatch();
   const {dataToken} = useSelector(state => state.login);
   const {isLoading, connection} = useSelector(state => state.global);
@@ -36,9 +35,9 @@ const Search = () => {
         headers: {Authorization: `Bearer ${dataToken}`},
       });
 
-      console.log(res, 'res');
-      console.log(res.data, 'res');
-      console.log(`${BASE_URL}/books?title=${search}`);
+      // console.log(res, 'res');
+      // console.log(res.data, 'res');
+      // console.log(`${BASE_URL}/books?title=${search}`); hapus
 
       setDataSearch(res.data.results);
 
@@ -82,7 +81,7 @@ const Search = () => {
         <View style={styles.header}>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <LibreBaskerville style={styles.title}>Search</LibreBaskerville>
-            <Ionicons name="search" size={30} color={LIGHT_BLUE_600} />
+            <Ionicons name="search" size={30} color={DARK_PURPLE_500} />
           </View>
           <LibreBaskerville style={styles.text}>
             Search your Favorite Book in Here!
@@ -94,7 +93,7 @@ const Search = () => {
             style={styles.searchIcon}
             name="search"
             size={30}
-            color={LIGTH_BLUE_500}
+            color={DARK_PURPLE_500}
           />
           <Input
             style={styles.input}

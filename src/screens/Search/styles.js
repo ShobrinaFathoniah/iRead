@@ -2,9 +2,9 @@ import {StyleSheet} from 'react-native';
 import {widthPercentageToDP} from 'react-native-responsive-screen';
 import {moderateScale} from 'react-native-size-matters';
 import {
-  LIGHT_BLUE_100_trans,
-  LIGHT_BLUE_600,
-  LIGTH_BLUE_500,
+  DARK_PURPLE_100_trans,
+  DARK_PURPLE_300,
+  DARK_PURPLE_500,
   RED_500,
 } from '../../helpers/colors';
 
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     marginTop: moderateScale(5),
   },
   input: {
-    backgroundColor: LIGHT_BLUE_100_trans,
+    backgroundColor: DARK_PURPLE_100_trans,
     borderBottomWidth: moderateScale(0),
     width: widthPercentageToDP(70),
     paddingStart: moderateScale(40),
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: moderateScale(23),
-    color: LIGHT_BLUE_600,
+    color: DARK_PURPLE_500,
     marginEnd: moderateScale(5),
     marginBottom: moderateScale(5),
   },
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: moderateScale(14),
-    color: LIGTH_BLUE_500,
+    color: DARK_PURPLE_300,
     marginStart: moderateScale(5),
     marginTop: moderateScale(5),
   },

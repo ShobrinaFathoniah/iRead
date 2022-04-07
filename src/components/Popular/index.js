@@ -8,7 +8,7 @@ import {
 import React from 'react';
 import {LibreBaskerville} from '../Fonts';
 import {moderateScale} from 'react-native-size-matters';
-import {LIGHT_BLUE_600, RED_500} from '../../helpers/colors';
+import {DARK_PURPLE_500, RED_500} from '../../helpers/colors';
 import PopularCard from '../PopularCard';
 import {navigate} from '../../helpers/navigate';
 import Recommended from '../Recommended';
@@ -117,6 +117,6 @@ const styles = StyleSheet.create({
   bab: {
     fontSize: moderateScale(20),
     marginStart: moderateScale(15),
-    color: LIGHT_BLUE_600,
+    color: DARK_PURPLE_500,
   },
 });
