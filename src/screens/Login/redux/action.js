@@ -6,9 +6,10 @@ import axios from 'axios';
 import {navigate} from '../../../helpers/navigate';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export const sendDataLogin = (dataUser, email, password) => async dispatch => {
+export const sendDataLogin = dataUser => async dispatch => {
   try {
-    if (email && password) {
+    // console.log(dataUser, 'action login');
+    if (dataUser) {
       dispatch(setIsLoading(true));
       const res = await axios.post(`${BASE_URL}/auth/login`, dataUser);
 
@@ -19,7 +20,7 @@ export const sendDataLogin = (dataUser, email, password) => async dispatch => {
       if (token) {
         dispatch(setToken(token));
         await AsyncStorage.setItem('@token', token);
-        navigate('Home');
+        navigate('MainApp');
 
         dispatch(setIsLoading(false));
       } else {

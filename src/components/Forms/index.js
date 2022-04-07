@@ -8,7 +8,7 @@ import {
   WHITE,
 } from '../../helpers/colors';
 import {loginPic, registerPic} from '../../assets';
-import {LibreBaskerville} from '../Fonts';
+import {Courgette, LibreBaskerville} from '../Fonts';
 
 const Forms = ({type, children, onPressButton, onPressText}) => {
   const image = () => {
@@ -49,6 +49,7 @@ const Forms = ({type, children, onPressButton, onPressText}) => {
 
   return (
     <View>
+      <Courgette style={styles.title}>{type}</Courgette>
       {image()}
       {children}
       <TouchableOpacity style={styles.button} onPress={onPressButton}>
@@ -90,5 +91,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     margin: moderateScale(10),
     alignSelf: 'center',
+  },
+  title: {
+    color: LIGHT_BLUE_600,
+    alignSelf: 'center',
+    fontSize: moderateScale(32),
+    letterSpacing: moderateScale(0.5),
+    marginTop: moderateScale(15),
   },
 });

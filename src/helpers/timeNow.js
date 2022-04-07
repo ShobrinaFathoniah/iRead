@@ -1,0 +1,13 @@
+export const getTimeNow = time => {
+  if (time >= 1 && time <= 10) {
+    return 'Selamat Pagi!';
+  } else if (time > 10 && time <= 14) {
+    return 'Selamat Siang!';
+  } else if (time > 14 && time <= 18) {
+    return 'Selamat Sore!';
+  } else if (time > 18 && time <= 24) {
+    return 'Selamat Malam!';
+  } else {
+    return 'Selamat Datang!';
+  }
+};

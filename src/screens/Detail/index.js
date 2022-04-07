@@ -198,12 +198,16 @@ const Detail = ({route, navigation}) => {
         {buttonBuy(stock)}
 
         <View style={styles.containerOverview}>
-          <LibreBaskerville style={[styles.text, styles.titleSynopsis]}>
+          <LibreBaskerville
+            type="Bold"
+            style={[styles.text, styles.titleSynopsis]}>
             Synopsis
           </LibreBaskerville>
-          <LibreBaskerville style={[styles.text, styles.textSynopsis]}>
-            {detail.synopsis}
-          </LibreBaskerville>
+          <View style={styles.synopsisContainer}>
+            <LibreBaskerville style={[styles.text, styles.textSynopsis]}>
+              {detail.synopsis}
+            </LibreBaskerville>
+          </View>
         </View>
       </View>
     );

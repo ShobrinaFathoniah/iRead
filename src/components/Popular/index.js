@@ -8,12 +8,29 @@ import {
 import React from 'react';
 import {LibreBaskerville} from '../Fonts';
 import {moderateScale} from 'react-native-size-matters';
-import {LIGHT_BLUE_600} from '../../helpers/colors';
+import {LIGHT_BLUE_600, RED_500} from '../../helpers/colors';
 import PopularCard from '../PopularCard';
 import {navigate} from '../../helpers/navigate';
 import Recommended from '../Recommended';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import Header from '../Header';
+import {getTimeNow} from '../../helpers/timeNow';
+import LoadingBar from '../LoadingBar';
+import {useSelector} from 'react-redux';
 
-const Popular = ({data1, data2, onRefresh, refreshing, hideTitle = false}) => {
+const Popular = ({
+  data1,
+  data2,
+  onRefresh,
+  refreshing,
+  hideTitle = false,
+  onLogout,
+  time,
+  headerShown = true,
+  hideLoading = false,
+}) => {
+  const {isLoading} = useSelector(state => state.global);
+
   const popularCard = ({item}) => {
     const idBook = item.id;
 
@@ -36,13 +53,42 @@ const Popular = ({data1, data2, onRefresh, refreshing, hideTitle = false}) => {
     );
   };
 
+  // console.log(getTimeNow(time));
+  // console.log(time, 'popular');
+
   const header = recommendedBooks => {
     return (
       <View>
+        {headerShown ? (
+          <Header
+            button={true}
+            nameIcon="logout"
+            onPressButton={onLogout}
+            radiusBottom={true}
+            text={getTimeNow(time)}
+          />
+        ) : null}
+
         <Recommended data={recommendedBooks} hideTitle={hideTitle} />
         {hideTitle ? null : (
-          <LibreBaskerville style={styles.bab}>Popular Books</LibreBaskerville>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              marginTop: moderateScale(25),
+            }}>
+            <LibreBaskerville type="Bold" style={styles.bab}>
+              Popular Books
+            </LibreBaskerville>
+            <AntDesign
+              style={{marginStart: moderateScale(5)}}
+              name="heart"
+              size={20}
+              color={RED_500}
+            />
+          </View>
         )}
+        {hideLoading ? null : LoadingBar(isLoading)}
       </View>
     );
   };
@@ -70,9 +116,7 @@ export default Popular;
 const styles = StyleSheet.create({
   bab: {
     fontSize: moderateScale(20),
-    margin: moderateScale(10),
     marginStart: moderateScale(15),
-    marginTop: moderateScale(25),
     color: LIGHT_BLUE_600,
   },
 });

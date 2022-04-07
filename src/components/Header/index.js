@@ -9,34 +9,28 @@ const Header = ({
   button = false,
   nameIcon,
   onPressButton,
-  onPressSearch,
-  search = false,
+  radiusBottom = false,
+  text = 'iRead',
 }) => {
   return (
     <View
       style={[
         styles.page,
-        {justifyContent: button ? 'space-between' : 'center'},
+        {
+          justifyContent: button ? 'space-evenly' : 'center',
+          borderBottomEndRadius: radiusBottom ? 150 : 0,
+          borderBottomStartRadius: radiusBottom ? 150 : 0,
+        },
       ]}>
       <StatusBar barStyle="dark-content" backgroundColor={LIGHT_BLUE_300} />
-      <PassionConflict style={styles.textAppName}>iRead</PassionConflict>
-      <View style={{flexDirection: 'row'}}>
-        {search ? (
-          <CircleButton
-            nameIcon="search1"
-            style={styles.button}
-            onPress={onPressSearch}
-          />
-        ) : null}
-
-        {button ? (
-          <CircleButton
-            nameIcon={nameIcon}
-            style={styles.button}
-            onPress={onPressButton}
-          />
-        ) : null}
-      </View>
+      <PassionConflict style={styles.textAppName}>{text}</PassionConflict>
+      {button ? (
+        <CircleButton
+          nameIcon={nameIcon}
+          style={styles.button}
+          onPress={onPressButton}
+        />
+      ) : null}
     </View>
   );
 };
@@ -50,13 +44,11 @@ const styles = StyleSheet.create({
     backgroundColor: LIGHT_BLUE_300,
   },
   textAppName: {
-    fontSize: moderateScale(45),
+    fontSize: moderateScale(42),
     margin: moderateScale(10),
     color: BLACK,
     letterSpacing: moderateScale(2),
     textAlign: 'center',
   },
-  button: {
-    marginRight: moderateScale(10),
-  },
+  button: {},
 });

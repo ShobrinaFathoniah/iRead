@@ -8,8 +8,11 @@ import {
   BLACK,
   DARK_PURPLE_300,
   DARK_PURPLE_500,
+  LIGHT_BLUE_100_trans,
   LIGHT_BLUE_300,
   LIGHT_BLUE_600,
+  LIGTH_BLUE_500,
+  WHITE,
 } from '../../helpers/colors';
 
 const styles = StyleSheet.create({
@@ -118,12 +121,20 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(18),
   },
   textSynopsis: {
-    marginTop: moderateScale(10),
     fontSize: moderateScale(14),
     textAlign: 'justify',
     letterSpacing: moderateScale(0.7),
-    color: DARK_PURPLE_300,
+    color: LIGHT_BLUE_600,
     marginHorizontal: moderateScale(10),
+  },
+  synopsisContainer: {
+    borderColor: LIGHT_BLUE_100_trans,
+    marginVertical: moderateScale(10),
+    borderWidth: moderateScale(0.5),
+    elevation: moderateScale(5),
+    backgroundColor: WHITE,
+    padding: moderateScale(10),
+    borderRadius: moderateScale(10),
   },
 });
 

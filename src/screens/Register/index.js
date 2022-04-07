@@ -31,7 +31,7 @@ const Register = ({navigation}) => {
     dispatch(sendDataRegister(dataUser, email, password, name, navigation));
   };
 
-  console.log(email);
+  // console.log(email);
   const emailChecker = email => {
     if (!checkEmail(email) && email.length > 0) {
       return (
@@ -87,7 +87,7 @@ const Register = ({navigation}) => {
 
   return (
     <ScrollView>
-      <Header />
+      <Header radiusBottom={true} />
       {connection ? registerScreen() : NoConnection(connection)}
     </ScrollView>
   );

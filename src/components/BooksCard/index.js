@@ -1,7 +1,7 @@
 import {StyleSheet, Image, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {moderateScale} from 'react-native-size-matters';
-import {LIGTH_BLUE_500} from '../../helpers/colors';
+import {BLACK, LIGTH_BLUE_500} from '../../helpers/colors';
 
 const BooksCard = ({urlImage, onPress}) => {
   return (
@@ -19,10 +19,8 @@ export default BooksCard;
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: moderateScale(40),
-    elevation: moderateScale(18),
-    shadowColor: 'black',
-    elevation: moderateScale(8),
-    shadowColor: 'black',
+    elevation: moderateScale(10),
+    shadowColor: BLACK,
     shadowOpacity: 0.26,
     shadowOffset: {width: 0, height: 2},
     shadowRadius: 10,
@@ -33,8 +31,8 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: moderateScale(10),
     borderBottomLeftRadius: moderateScale(10),
     width: moderateScale(200),
-    elevation: moderateScale(8),
-    shadowColor: 'black',
+    elevation: moderateScale(10),
+    shadowColor: BLACK,
     shadowOpacity: 0.26,
     shadowOffset: {width: 0, height: 2},
     shadowRadius: 10,

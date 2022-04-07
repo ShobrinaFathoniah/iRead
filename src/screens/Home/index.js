@@ -9,14 +9,13 @@ import {setToken} from '../Login/redux/action';
 import {navigate} from '../../helpers/navigate';
 import {moderateScale} from 'react-native-size-matters';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {getTimeNow} from '../../helpers/timeNow';
 
 const Home = ({navigation}) => {
   const dispatch = useDispatch();
   const {dataToken} = useSelector(state => state.login);
   const {data} = useSelector(state => state.home);
-  const {refreshing, isLoading, connection} = useSelector(
-    state => state.global,
-  );
+  const {refreshing, connection} = useSelector(state => state.global);
 
   const getDataBook = () => {
     dispatch(getDataBooks(dataToken));
@@ -74,10 +73,9 @@ const Home = ({navigation}) => {
     ]);
   };
 
-  const goToSearch = () => navigation.navigate('Search');
-
+  const time = new Date().getHours();
+  // console.log(time);
   const popularBooks = data.slice(0, 20);
-
   const recommendedBooks = data
     .sort(function (a, b) {
       return b.average_rating - a.average_rating;
@@ -92,21 +90,15 @@ const Home = ({navigation}) => {
           data2={recommendedBooks}
           onRefresh={onRefresh}
           refreshing={refreshing}
+          onLogout={logout}
+          time={time}
         />
       </View>
     );
   };
 
   return (
-    <View style={{flex: 1, marginBottom: moderateScale(90)}}>
-      <Header
-        button={true}
-        nameIcon="logout"
-        onPressButton={logout}
-        search={true}
-        onPressSearch={goToSearch}
-      />
-      {LoadingBar(isLoading)}
+    <View style={{flex: 1}}>
       {connection ? homeScreen() : NoConnection(connection)}
     </View>
   );

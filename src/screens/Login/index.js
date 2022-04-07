@@ -10,38 +10,35 @@ const Login = ({navigation}) => {
   const {isLoading, connection} = useSelector(state => state.global);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  // const [dataUser, setDataUser] = useState({});
 
   const dispatch = useDispatch();
 
   const dataUser = {
-    email: email, //loonapopo@ymail.com
-    password: password, //loona123
+    email: dataEmail ? dataEmail : email,
+    password: dataPassword ? dataPassword : password,
   };
-
-  // const setDataLogin = (dataEmail, dataPassword) => {
-  //   setEmail(dataEmail);
-  //   setPassword(dataPassword);
-  // };
 
   const tokenChecker = async () => {
     try {
       const value = await AsyncStorage.getItem('@token');
       if (value !== null) {
         dispatch(setToken(value));
-        navigation.navigate('Home');
+        navigation.navigate('MainApp');
       }
     } catch (e) {
       console.log(e);
     }
   };
 
+  // console.log(dataUser, 'login');
+
   useEffect(() => {
-    // setDataLogin(dataEmail, dataPassword);
     tokenChecker();
   }, []);
 
   const login = () => {
-    dispatch(sendDataLogin(dataUser, email, password));
+    dispatch(sendDataLogin(dataUser));
   };
 
   const goToRegister = () => navigation.navigate('Register');
@@ -53,14 +50,12 @@ const Login = ({navigation}) => {
           <View>
             <Input
               onChangeText={value => setEmail(value)}
-              // value={dataEmail ? dataEmail : email}
-              value={email}
+              value={dataEmail ? dataEmail : email}
               placeholder="Email"
             />
             <Input
               onChangeText={value => setPassword(value)}
-              // value={dataPassword ? dataPassword : password}
-              value={password}
+              value={dataPassword ? dataPassword : password}
               placeholder="Password"
               secureTextEntry={true}
             />
@@ -73,7 +68,7 @@ const Login = ({navigation}) => {
 
   return (
     <ScrollView>
-      <Header />
+      <Header radiusBottom={true} />
       {connection ? loginScreen() : NoConnection(connection)}
     </ScrollView>
   );
