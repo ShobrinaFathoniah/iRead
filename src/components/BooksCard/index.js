@@ -5,9 +5,18 @@ import {BLACK, LIGTH_BLUE_500} from '../../helpers/colors';
 
 const BooksCard = ({urlImage, onPress}) => {
   return (
-    <View style={{alignItems: 'center', marginBottom: moderateScale(10)}}>
-      <TouchableOpacity style={styles.container} onPress={onPress}>
-        <Image style={styles.image} source={{uri: urlImage}} />
+    <View
+      testID="booksCard"
+      style={{alignItems: 'center', marginBottom: moderateScale(10)}}>
+      <TouchableOpacity
+        testID="touchableBooksCard"
+        style={styles.container}
+        onPress={onPress}>
+        <Image
+          testID="imageBooksCard"
+          style={styles.image}
+          source={{uri: urlImage}}
+        />
       </TouchableOpacity>
       <View style={styles.bawahan}></View>
     </View>

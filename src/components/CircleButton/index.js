@@ -21,6 +21,7 @@ const CircleButton = ({
 
   return (
     <TouchableOpacity
+      testID="circleButton"
       onPress={onPress}
       style={[styles.circle, {...passedStyles}]}>
       <AntDesign name={nameIcon} color={color} size={size} />

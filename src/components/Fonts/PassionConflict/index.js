@@ -1,7 +1,7 @@
 import {StyleSheet, Text} from 'react-native';
 import React from 'react';
 
-const PassionsConflict = ({style, children}) => {
+const PassionsConflict = ({style, children, testID}) => {
   const passedStyles = Array.isArray(style)
     ? Object.assign({}, ...style)
     : style;
@@ -12,7 +12,11 @@ const PassionsConflict = ({style, children}) => {
     },
   });
 
-  return <Text style={[styles.font, {...passedStyles}]}>{children}</Text>;
+  return (
+    <Text testID={testID} style={[styles.font, {...passedStyles}]}>
+      {children}
+    </Text>
+  );
 };
 
 export default PassionsConflict;

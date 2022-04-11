@@ -35,10 +35,6 @@ const Search = () => {
         headers: {Authorization: `Bearer ${dataToken}`},
       });
 
-      // console.log(res, 'res');
-      // console.log(res.data, 'res');
-      // console.log(`${BASE_URL}/books?title=${search}`); hapus
-
       setDataSearch(res.data.results);
 
       dispatch(setIsLoading(false));

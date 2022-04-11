@@ -7,6 +7,7 @@ import {LibreBaskerville} from '../Fonts';
 const Button = ({onPress, text}) => {
   return (
     <TouchableOpacity
+      testID="button"
       style={{
         padding: moderateScale(10),
         backgroundColor: DARK_PURPLE_300_trans,

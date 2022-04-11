@@ -6,6 +6,7 @@ const LibreBaskerville = ({
   children,
   type = 'Regular',
   numberOfLines = 0,
+  testID,
 }) => {
   const passedStyles = Array.isArray(style)
     ? Object.assign({}, ...style)
@@ -19,6 +20,7 @@ const LibreBaskerville = ({
 
   return (
     <Text
+      testID={testID}
       numberOfLines={numberOfLines}
       ellipsizeMode="tail"
       style={[styles.font, {...passedStyles}]}>

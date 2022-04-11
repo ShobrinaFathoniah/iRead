@@ -20,6 +20,8 @@ target 'iRead' do
 
   pod 'RNSVG', :path => '../node_modules/react-native-svg'
 
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
   target 'iReadTests' do
     inherit! :complete
     # Pods for testing
