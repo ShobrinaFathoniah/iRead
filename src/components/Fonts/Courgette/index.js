@@ -8,7 +8,7 @@ const Courgette = ({style, children, testID}) => {
 
   const styles = StyleSheet.create({
     font: {
-      fontFamily: `Courgette-Regular`,
+      fontFamily: 'Courgette-Regular',
     },
   });
 

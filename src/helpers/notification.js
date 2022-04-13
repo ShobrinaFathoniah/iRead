@@ -1,3 +1,6 @@
+/* eslint-disable no-dupe-keys */
+/* eslint-disable no-shadow */
+/* eslint-disable no-undef */
 import PushNotification from 'react-native-push-notification';
 
 class notification {

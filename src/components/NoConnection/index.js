@@ -1,4 +1,4 @@
-import {View, Image} from 'react-native';
+import {View, Image, StyleSheet} from 'react-native';
 import React from 'react';
 import {
   heightPercentageToDP,
@@ -14,27 +14,9 @@ const NoConnection = connection => {
     return null;
   } else if (!connection) {
     return (
-      <View
-        style={{
-          justifyContent: 'center',
-          margin: moderateScale(10),
-        }}>
-        <Image
-          style={{
-            width: widthPercentageToDP(70),
-            height: heightPercentageToDP(40),
-            resizeMode: 'contain',
-            alignSelf: 'center',
-          }}
-          source={noConnectionPic}
-        />
-        <LibreBaskerville
-          style={{
-            fontSize: 17,
-            color: LIGHT_BLUE_600,
-            textAlign: 'center',
-            margin: moderateScale(15),
-          }}>
+      <View style={styles.containerPage}>
+        <Image style={styles.image} source={noConnectionPic} />
+        <LibreBaskerville style={styles.text}>
           Turn On your Internet Connection, Please! :)
         </LibreBaskerville>
       </View>
@@ -43,3 +25,22 @@ const NoConnection = connection => {
 };
 
 export default NoConnection;
+
+const styles = StyleSheet.create({
+  containerPage: {
+    justifyContent: 'center',
+    margin: moderateScale(10),
+  },
+  image: {
+    width: widthPercentageToDP(70),
+    height: heightPercentageToDP(40),
+    resizeMode: 'contain',
+    alignSelf: 'center',
+  },
+  text: {
+    fontSize: 17,
+    color: LIGHT_BLUE_600,
+    textAlign: 'center',
+    margin: moderateScale(15),
+  },
+});

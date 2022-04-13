@@ -21,8 +21,8 @@ const Forms = ({type, children, onPressButton, onPressText}) => {
     }
   };
 
-  const helpText = type => {
-    if (type === 'Login') {
+  const helpText = types => {
+    if (types === 'Login') {
       return (
         <View style={styles.containerTextHelper}>
           <LibreBaskerville style={{color: BLACK}}>
@@ -33,7 +33,7 @@ const Forms = ({type, children, onPressButton, onPressText}) => {
           </TouchableOpacity>
         </View>
       );
-    } else if (type === 'Register') {
+    } else if (types === 'Register') {
       return (
         <View style={styles.containerTextHelper}>
           <LibreBaskerville style={{color: BLACK}}>

@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
   containerLastSeen: {
     margin: moderateScale(15),
   },
+  containerTitle: {flexDirection: 'row', alignItems: 'center'},
 });
 
 export default styles;

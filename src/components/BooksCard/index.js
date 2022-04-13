@@ -5,9 +5,7 @@ import {BLACK, LIGTH_BLUE_500} from '../../helpers/colors';
 
 const BooksCard = ({urlImage, onPress}) => {
   return (
-    <View
-      testID="booksCard"
-      style={{alignItems: 'center', marginBottom: moderateScale(10)}}>
+    <View testID="booksCard" style={styles.containerBooks}>
       <TouchableOpacity
         testID="touchableBooksCard"
         style={styles.container}
@@ -18,7 +16,7 @@ const BooksCard = ({urlImage, onPress}) => {
           source={{uri: urlImage}}
         />
       </TouchableOpacity>
-      <View style={styles.bawahan}></View>
+      <View style={styles.bawahan} />
     </View>
   );
 };
@@ -26,6 +24,7 @@ const BooksCard = ({urlImage, onPress}) => {
 export default BooksCard;
 
 const styles = StyleSheet.create({
+  containerBooks: {alignItems: 'center', marginBottom: moderateScale(10)},
   container: {
     marginHorizontal: moderateScale(40),
     elevation: moderateScale(10),

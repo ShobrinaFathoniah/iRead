@@ -1,4 +1,4 @@
-import {View} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import React from 'react';
 import * as Progress from 'react-native-progress';
 import {DARK_PURPLE_500} from '../../helpers/colors';
@@ -6,7 +6,7 @@ import {DARK_PURPLE_500} from '../../helpers/colors';
 const LoadingBar = loading => {
   if (loading) {
     return (
-      <View style={{justifyContent: 'center', alignSelf: 'center'}}>
+      <View style={styles.loading}>
         <Progress.CircleSnail
           size={80}
           indeterminate={true}
@@ -21,3 +21,7 @@ const LoadingBar = loading => {
 };
 
 export default LoadingBar;
+
+const styles = StyleSheet.create({
+  loading: {justifyContent: 'center', alignSelf: 'center'},
+});

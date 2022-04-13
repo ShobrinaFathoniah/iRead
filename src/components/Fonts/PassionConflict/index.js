@@ -8,7 +8,7 @@ const PassionsConflict = ({style, children, testID}) => {
 
   const styles = StyleSheet.create({
     font: {
-      fontFamily: `PassionsConflict-Regular`,
+      fontFamily: 'PassionsConflict-Regular',
     },
   });
 

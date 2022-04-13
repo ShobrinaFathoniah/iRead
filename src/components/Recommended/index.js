@@ -33,12 +33,7 @@ const Recommended = ({data, hideTitle}) => {
   return (
     <View>
       {hideTitle ? null : (
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            marginVertical: moderateScale(15),
-          }}>
+        <View style={styles.containerTitle}>
           <LibreBaskerville type="Bold" style={styles.bab}>
             Recommended Books
           </LibreBaskerville>
@@ -70,5 +65,10 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(20),
     color: DARK_PURPLE_500,
     marginStart: moderateScale(15),
+  },
+  containerTitle: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: moderateScale(15),
   },
 });

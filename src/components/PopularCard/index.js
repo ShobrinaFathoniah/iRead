@@ -50,7 +50,7 @@ const PopularCard = ({urlImage, title, price, rating, publisher, id_book}) => {
   return (
     <View style={styles.page}>
       <View>
-        <View style={{alignItems: 'center'}}>
+        <View style={styles.containerImage}>
           <Image style={styles.image} source={{uri: urlImage}} />
         </View>
         <View style={{margin: moderateScale(7)}}>
@@ -65,7 +65,7 @@ const PopularCard = ({urlImage, title, price, rating, publisher, id_book}) => {
           <LibreBaskerville style={[styles.text, styles.textPublisher]}>
             {publisher}
           </LibreBaskerville>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View style={styles.containerBookInfo}>
             <MaterialIcons name="star" size={17} color={YELLOW_200} />
             <LibreBaskerville style={[styles.text, styles.textRating]}>
               {rating}
@@ -127,4 +127,6 @@ const styles = StyleSheet.create({
   heart: {
     marginStart: moderateScale(5),
   },
+  containerImage: {alignItems: 'center'},
+  containerBookInfo: {flexDirection: 'row', alignItems: 'center'},
 });

@@ -1,4 +1,4 @@
-import {StyleSheet, TouchableOpacity} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import React from 'react';
 import {moderateScale} from 'react-native-size-matters';
 import {BLACK, DARK_PURPLE_300_trans} from '../../helpers/colors';
@@ -22,5 +22,3 @@ const Button = ({onPress, text}) => {
 };
 
 export default Button;
-
-const styles = StyleSheet.create({});

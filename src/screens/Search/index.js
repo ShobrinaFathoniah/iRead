@@ -28,10 +28,10 @@ const Search = () => {
 
   console.log(search);
 
-  const getDataSearch = async search => {
+  const getDataSearch = async searchBook => {
     try {
       dispatch(setIsLoading(true));
-      const res = await axios.get(`${BASE_URL}/books?title=${search}`, {
+      const res = await axios.get(`${BASE_URL}/books?title=${searchBook}`, {
         headers: {Authorization: `Bearer ${dataToken}`},
       });
 
@@ -44,8 +44,8 @@ const Search = () => {
     }
   };
 
-  const lastSeenBook = detail => {
-    const idBook = detail.id;
+  const lastSeenBook = detailBook => {
+    const idBook = detailBook.id;
 
     return (
       <View style={styles.containerLastSeen}>
@@ -59,12 +59,12 @@ const Search = () => {
             });
           }}>
           <PopularCard
-            title={detail.title}
-            urlImage={detail.cover_image}
+            title={detailBook.title}
+            urlImage={detailBook.cover_image}
             id_book={idBook}
-            price={detail.price}
-            publisher={detail.publisher}
-            rating={detail.average_rating}
+            price={detailBook.price}
+            publisher={detailBook.publisher}
+            rating={detailBook.average_rating}
           />
         </TouchableOpacity>
       </View>
@@ -75,7 +75,7 @@ const Search = () => {
     return (
       <View>
         <View style={styles.header}>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View style={styles.containerTitle}>
             <LibreBaskerville style={styles.title}>Search</LibreBaskerville>
             <Ionicons name="search" size={30} color={DARK_PURPLE_500} />
           </View>

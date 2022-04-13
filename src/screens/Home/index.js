@@ -8,6 +8,7 @@ import {setRefreshing} from '../../store/globalAction';
 import {setToken} from '../Login/redux/action';
 import {navigate} from '../../helpers/navigate';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import styles from './style';
 
 const Home = ({}) => {
   const dispatch = useDispatch();
@@ -72,7 +73,6 @@ const Home = ({}) => {
   };
 
   const time = new Date().getHours();
-  // console.log(time);
   const popularBooks = data.slice(0, 20);
   const recommendedBooks = data
     .sort(function (a, b) {
@@ -96,7 +96,7 @@ const Home = ({}) => {
   };
 
   return (
-    <View style={{flex: 1}}>
+    <View style={styles.homePage}>
       {connection ? homeScreen() : NoConnection(connection)}
     </View>
   );

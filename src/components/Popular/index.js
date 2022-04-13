@@ -53,9 +53,6 @@ const Popular = ({
     );
   };
 
-  // console.log(getTimeNow(time));
-  // console.log(time, 'popular');
-
   const header = recommendedBooks => {
     return (
       <View>
@@ -71,12 +68,7 @@ const Popular = ({
 
         <Recommended data={recommendedBooks} hideTitle={hideTitle} />
         {hideTitle ? null : (
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              marginTop: moderateScale(25),
-            }}>
+          <View style={styles.containerTitle}>
             <LibreBaskerville type="Bold" style={styles.bab}>
               Popular Books
             </LibreBaskerville>
@@ -118,5 +110,10 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(20),
     marginStart: moderateScale(15),
     color: DARK_PURPLE_500,
+  },
+  containerTitle: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: moderateScale(25),
   },
 });

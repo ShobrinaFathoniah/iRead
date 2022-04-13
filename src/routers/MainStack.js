@@ -10,7 +10,6 @@ import {
   SearchScreen,
   SuccessRegister,
 } from '../screens';
-import {LIGHT_BLUE_600} from '../helpers/colors';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();

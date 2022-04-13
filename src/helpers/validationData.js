@@ -12,8 +12,6 @@ export const checkEmail = email => {
   }
 };
 
-const hurufBesar = /[A-Z]/;
-const hurufKecil = /[a-z]/;
 const angka = /[0-9]/;
 
 export const isValidPassword = givenPassword => {

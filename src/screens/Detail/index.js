@@ -93,10 +93,10 @@ const Detail = ({route, navigation}) => {
   };
 
   const stock = detail.stock_available;
-  const stockChecker = stock => (stock > 0 ? LIGHT_BLUE_600 : RED_500);
+  const stockChecker = stocks => (stocks > 0 ? LIGHT_BLUE_600 : RED_500);
 
-  const buttonBuy = stock => {
-    if (stock > 0) {
+  const buttonBuy = stocks => {
+    if (stocks > 0) {
       return (
         <View style={styles.containerButtonBuy}>
           <TouchableOpacity style={styles.buttonBuy}>

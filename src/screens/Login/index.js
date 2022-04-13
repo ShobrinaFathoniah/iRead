@@ -30,8 +30,6 @@ const Login = ({navigation}) => {
     }
   };
 
-  // console.log(dataUser, 'login');
-
   useEffect(() => {
     tokenChecker();
   }, []);

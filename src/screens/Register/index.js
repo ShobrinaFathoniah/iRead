@@ -31,9 +31,8 @@ const Register = ({navigation}) => {
     dispatch(sendDataRegister(dataUser, email, password, name, navigation));
   };
 
-  // console.log(email);
-  const emailChecker = email => {
-    if (!checkEmail(email) && email.length > 0) {
+  const emailChecker = emailCheck => {
+    if (!checkEmail(emailCheck) && emailCheck.length > 0) {
       return (
         <LibreBaskerville style={styles.erorText}>
           Email yang Anda masukan Tidak Valid
@@ -43,8 +42,8 @@ const Register = ({navigation}) => {
   };
 
   console.log(password);
-  const passwordChecker = password => {
-    if (!isValidPassword(password) && password.length > 0) {
+  const passwordChecker = passwordCheck => {
+    if (!isValidPassword(passwordCheck) && passwordCheck.length > 0) {
       return (
         <LibreBaskerville style={[styles.erorText, styles.passwordError]}>
           Password Harus Lebih dari 8 dan Terdapat Angka
