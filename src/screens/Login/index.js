@@ -18,21 +18,20 @@ const Login = ({navigation}) => {
     password: dataPassword ? dataPassword : password,
   };
 
-  const tokenChecker = async () => {
-    try {
-      const value = await AsyncStorage.getItem('@token');
-      if (value !== null) {
-        dispatch(setToken(value));
-        navigation.navigate('MainApp');
-      }
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
   useEffect(() => {
+    const tokenChecker = async () => {
+      try {
+        const value = await AsyncStorage.getItem('@token');
+        if (value !== null) {
+          dispatch(setToken(value));
+          navigation.navigate('MainApp');
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    };
     tokenChecker();
-  }, []);
+  }, [dispatch, navigation]);
 
   const login = () => {
     dispatch(sendDataLogin(dataUser));

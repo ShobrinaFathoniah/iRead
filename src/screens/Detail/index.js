@@ -40,13 +40,12 @@ const Detail = ({route, navigation}) => {
     state => state.global,
   );
 
-  const getDetail = () => {
-    dispatch(getDataDetail(dataToken, id_book));
-  };
-
   useEffect(() => {
+    const getDetail = () => {
+      dispatch(getDataDetail(dataToken, id_book));
+    };
     getDetail();
-  }, []);
+  }, [dataToken, id_book, dispatch]);
 
   const shareData = () => {
     Share.share({
@@ -89,7 +88,7 @@ const Detail = ({route, navigation}) => {
 
   const onRefresh = () => {
     dispatch(setRefreshing(true));
-    getDetail();
+    dispatch(getDataDetail(dataToken, id_book));
   };
 
   const stock = detail.stock_available;

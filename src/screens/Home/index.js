@@ -16,10 +16,6 @@ const Home = ({}) => {
   const {data} = useSelector(state => state.home);
   const {refreshing, connection} = useSelector(state => state.global);
 
-  const getDataBook = () => {
-    dispatch(getDataBooks(dataToken));
-  };
-
   console.log(data.length);
 
   // tombol exit
@@ -45,13 +41,16 @@ const Home = ({}) => {
   };
 
   useEffect(() => {
+    const getDataBook = () => {
+      dispatch(getDataBooks(dataToken));
+    };
     getDataBook();
     exit();
-  }, []);
+  }, [dataToken, dispatch]);
 
   const onRefresh = () => {
     dispatch(setRefreshing(true));
-    getDataBook();
+    dispatch(getDataBooks(dataToken));
   };
 
   const logout = async () => {
