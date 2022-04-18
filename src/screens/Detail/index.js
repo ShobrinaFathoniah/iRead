@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {getDataDetail} from './redux/action';
+import {getDataDetail, setEbookSeen} from './redux/action';
 import {
   CircleButton,
   LibreBaskerville,
@@ -19,13 +19,16 @@ import {
 import styles from './style';
 import {moderateScale} from 'react-native-size-matters';
 import {
+  DARK_PURPLE_300,
   DARK_PURPLE_300_trans,
   LIGHT_BLUE_600,
+  PURPLE,
   RED_500,
 } from '../../helpers/colors';
 import {setHeart, setRefreshing} from '../../store/globalAction';
 import {numberToIDR} from '../../helpers/numberToIDR';
 import {Notification} from '../../helpers/notification';
+import Pdf from 'react-native-pdf';
 
 const Detail = ({route, navigation}) => {
   const {params} = route.params;
@@ -33,9 +36,8 @@ const Detail = ({route, navigation}) => {
 
   const dispatch = useDispatch();
   const {dataToken} = useSelector(state => state.login);
-  const {detail} = useSelector(state => state.detailBook);
+  const {detail, ebookSeen} = useSelector(state => state.detailBook);
   const {heart, idBook} = useSelector(state => state.global);
-
   const {refreshing, isLoading, connection} = useSelector(
     state => state.global,
   );
@@ -91,6 +93,25 @@ const Detail = ({route, navigation}) => {
     dispatch(getDataDetail(dataToken, id_book));
   };
 
+  const openPDF = () => {
+    dispatch(setEbookSeen(true));
+
+    if (ebookSeen) {
+      return (
+        <View>
+          <Pdf
+            source={{
+              uri: 'https://hpread.scholastic.com/HP_Book2_Chapter_Excerpt.pdf',
+            }}
+            style={styles.containerPdf}
+          />
+        </View>
+      );
+    } else {
+      return null;
+    }
+  };
+
   const stock = detail.stock_available;
   const stockChecker = stocks => (stocks > 0 ? LIGHT_BLUE_600 : RED_500);
 
@@ -117,6 +138,43 @@ const Detail = ({route, navigation}) => {
             ]}>
             <LibreBaskerville style={[styles.text, styles.textButtonBuy]}>
               Out of Stock
+            </LibreBaskerville>
+          </View>
+        </View>
+      );
+    }
+  };
+
+  const buttonPdf = () => {
+    if (detail.title === 'Harry Potter and the Chamber of Secrets') {
+      return (
+        <View style={styles.containerButtonBuy}>
+          <TouchableOpacity
+            style={[
+              styles.buttonBuy,
+              {
+                backgroundColor: PURPLE,
+              },
+            ]}
+            onPress={openPDF}>
+            <LibreBaskerville style={[styles.text, styles.textButtonBuy]}>
+              See e-Books
+            </LibreBaskerville>
+          </TouchableOpacity>
+        </View>
+      );
+    } else {
+      return (
+        <View style={styles.containerButtonBuy}>
+          <View
+            style={[
+              styles.buttonBuy,
+              {
+                backgroundColor: DARK_PURPLE_300,
+              },
+            ]}>
+            <LibreBaskerville style={[styles.text, styles.textButtonBuy]}>
+              No e-Book
             </LibreBaskerville>
           </View>
         </View>
@@ -172,7 +230,6 @@ const Detail = ({route, navigation}) => {
             </View>
           </View>
         </View>
-
         <View style={styles.containerInfoAvailableBooks}>
           <View style={styles.containerPages}>
             <LibreBaskerville
@@ -201,9 +258,10 @@ const Detail = ({route, navigation}) => {
             </LibreBaskerville>
           </View>
         </View>
-        {/* ssesuain sama atasnya */}
-        {buttonBuy(stock)}
-
+        <View style={styles.containerAllButton}>
+          {buttonPdf()}
+          {buttonBuy(stock)}
+        </View>
         <View style={styles.containerOverview}>
           <LibreBaskerville
             type="Bold"

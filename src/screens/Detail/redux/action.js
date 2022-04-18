@@ -1,4 +1,4 @@
-import {SET_DETAIL} from './types';
+import {SET_DETAIL, SET_SEEN_EBOOK} from './types';
 import {BASE_URL} from '@env';
 import {setIsLoading, setRefreshing} from '../../../store/globalAction';
 import axios from 'axios';
@@ -28,5 +28,12 @@ export const setDetailData = data => {
   return {
     type: SET_DETAIL,
     detail: data,
+  };
+};
+
+export const setEbookSeen = data => {
+  return {
+    type: SET_SEEN_EBOOK,
+    ebookSeen: data,
   };
 };

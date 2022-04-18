@@ -1,7 +1,8 @@
-import {SET_DETAIL} from './types';
+import {SET_DETAIL, SET_SEEN_EBOOK} from './types';
 
 const initialState = {
   detail: {},
+  ebookSeen: false,
 };
 
 export const detailReducer = (state = initialState, action) => {
@@ -10,6 +11,12 @@ export const detailReducer = (state = initialState, action) => {
       return {
         ...state,
         detail: action.detail,
+      };
+
+    case SET_SEEN_EBOOK:
+      return {
+        ...state,
+        ebookSeen: action.ebookSeen,
       };
 
     default:

@@ -9,7 +9,6 @@ import {
   DARK_PURPLE_100_trans,
   DARK_PURPLE_500,
   LIGHT_BLUE_300,
-  WHITE,
 } from '../../helpers/colors';
 
 const styles = StyleSheet.create({
@@ -95,14 +94,13 @@ const styles = StyleSheet.create({
     marginStart: moderateScale(5),
   },
   containerButtonBuy: {
-    alignItems: 'flex-end',
     marginRight: moderateScale(10),
   },
   buttonBuy: {
-    margin: moderateScale(10),
+    marginStart: moderateScale(10),
     padding: moderateScale(10),
     backgroundColor: LIGHT_BLUE_300,
-    width: moderateScale(180),
+    width: moderateScale(160),
     alignItems: 'center',
     borderRadius: moderateScale(5),
   },
@@ -122,16 +120,21 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
     letterSpacing: moderateScale(0.7),
     color: DARK_PURPLE_500,
-    marginHorizontal: moderateScale(10),
   },
   synopsisContainer: {
-    borderColor: DARK_PURPLE_100_trans,
-    marginVertical: moderateScale(10),
-    borderWidth: moderateScale(0.5),
-    elevation: moderateScale(5),
-    backgroundColor: WHITE,
     padding: moderateScale(10),
     borderRadius: moderateScale(10),
+  },
+  containerAllButton: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    margin: moderateScale(10),
+  },
+  containerPdf: {
+    height: heightPercentageToDP(80),
+    width: widthPercentageToDP(95),
+    margin: moderateScale(10),
+    backgroundColor: DARK_PURPLE_100_trans,
   },
 });
 
