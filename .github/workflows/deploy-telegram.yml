@@ -1,0 +1,26 @@
+name: Deploy to Telegram
+
+on:
+  workflow_dispatch: #manual run
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  testing:
+    # runner job will run on
+    runs-on: ubuntu-latest
+
+    # merepresentasikan apapun yang ada dalam step
+    steps:
+      # cek repositori
+      - uses: action/checkout@v2
+      #  node, android, javaa
+      - uses: docker://circleci/android:api-29-node
+
+      - name: instalation modules
+        run: yarn
+
+      - name: Unit Testing
+        run: yarn test
