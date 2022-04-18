@@ -1,0 +1,6 @@
+name: Deploy to Telegram
+
+on:
+  workflow_dispatch: #manual run
+  release:
+    types: [published]

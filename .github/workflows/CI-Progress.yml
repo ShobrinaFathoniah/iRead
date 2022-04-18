@@ -1,4 +1,4 @@
-name: Deploy to Telegram
+name: CI Progress
 
 on:
   workflow_dispatch: #manual run
