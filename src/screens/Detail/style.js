@@ -21,6 +21,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
   },
+  miniButtonPdf: {
+    margin: moderateScale(10),
+  },
   text: {
     color: DARK_PURPLE_500,
     fontSize: moderateScale(12),
@@ -114,6 +117,7 @@ const styles = StyleSheet.create({
   },
   titleSynopsis: {
     fontSize: moderateScale(18),
+    marginTop: moderateScale(10),
   },
   textSynopsis: {
     fontSize: moderateScale(14),
@@ -122,7 +126,8 @@ const styles = StyleSheet.create({
     color: DARK_PURPLE_500,
   },
   synopsisContainer: {
-    padding: moderateScale(10),
+    marginTop: moderateScale(5),
+    marginEnd: moderateScale(5),
     borderRadius: moderateScale(10),
   },
   containerAllButton: {
@@ -132,9 +137,12 @@ const styles = StyleSheet.create({
   },
   containerPdf: {
     height: heightPercentageToDP(80),
-    width: widthPercentageToDP(95),
     margin: moderateScale(10),
     backgroundColor: DARK_PURPLE_100_trans,
+  },
+  pdf: {
+    height: heightPercentageToDP(80),
+    margin: moderateScale(5),
   },
 });
 

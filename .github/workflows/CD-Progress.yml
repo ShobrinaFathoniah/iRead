@@ -7,7 +7,7 @@ on:
 
 jobs:
   send-to-telegram:
-    name: send apk too telegran
+    name: send apk to telegran
     runs-on: ubuntu-latest
 
     steps:
@@ -25,7 +25,7 @@ jobs:
           ./gradlew assembleRelease
           cd ..
 
-      - name: send apk as message
+      - name: send apk as message #gajalan
         run: |
           cd android/app/build/outputs/apk/release/
           curl -X POST -H 'Content-Type: multipart/form-data' -F document=@app-release.apk -F 'chat_id=${{secrets.TG_CHAT_ID}}' ${{secrets.TG_BOT_TOKEN}}/sendDocument

@@ -93,17 +93,15 @@ const Detail = ({route, navigation}) => {
     dispatch(getDataDetail(dataToken, id_book));
   };
 
-  const openPDF = () => {
-    dispatch(setEbookSeen(true));
-
-    if (ebookSeen) {
+  const openPDF = seen => {
+    if (seen) {
       return (
-        <View>
+        <View style={styles.containerPdf}>
           <Pdf
             source={{
               uri: 'https://hpread.scholastic.com/HP_Book2_Chapter_Excerpt.pdf',
             }}
-            style={styles.containerPdf}
+            style={styles.pdf}
           />
         </View>
       );
@@ -156,7 +154,11 @@ const Detail = ({route, navigation}) => {
                 backgroundColor: PURPLE,
               },
             ]}
-            onPress={openPDF}>
+            onPress={() =>
+              ebookSeen
+                ? dispatch(setEbookSeen(false))
+                : dispatch(setEbookSeen(true))
+            }>
             <LibreBaskerville style={[styles.text, styles.textButtonBuy]}>
               See e-Books
             </LibreBaskerville>
@@ -288,7 +290,9 @@ const Detail = ({route, navigation}) => {
         <View>
           <CircleButton
             nameIcon="arrowleft"
-            onPress={() => navigation.goBack()}
+            onPress={() =>
+              ebookSeen ? dispatch(setEbookSeen(false)) : navigation.goBack()
+            }
           />
         </View>
         <View style={styles.miniButtons2}>
@@ -303,7 +307,11 @@ const Detail = ({route, navigation}) => {
       </View>
 
       {LoadingBar(isLoading)}
-      {connection ? detailScreen() : NoConnection(connection)}
+      {connection
+        ? ebookSeen
+          ? openPDF(ebookSeen)
+          : detailScreen()
+        : NoConnection(connection)}
     </ScrollView>
   );
 };
