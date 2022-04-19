@@ -27,5 +27,5 @@ jobs:
 
       - name: send apk as message
         run: |
-          cd android/app/build/outputs/apk/release
-          curl -X POST -H 'Content-Type: multipart/form-data' -F "chat_id=${{secrets.TG_CHAT_ID}}" -F document=@app-release.apk ${{secrets.TG_BOT_TOKEN}}/sendDocument
+          cd android/app/build/outputs/apk/release/
+          curl -X POST -H 'Content-Type: multipart/form-data' -F document=@app-release.apk -F 'chat_id=${{secrets.TG_CHAT_ID}}' ${{secrets.TG_BOT_TOKEN}}/sendDocument
