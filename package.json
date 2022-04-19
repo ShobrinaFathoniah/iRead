@@ -10,11 +10,12 @@
     "lint": "eslint .",
     "prepare": "husky install",
     "postVersion": "react-native-version",
-    "published": "np"
+    "published": "np",
+    "build:release": "cd android && ./gradlew clean && ./gradlew cleanBuildCache && ./gradlew bundleRelease assembleRelease && cd .."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ShobrinaFathoniah/iRead"
+    "url": "git+https://github.com/ShobrinaFathoniah/iRead.git"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.17.3",
