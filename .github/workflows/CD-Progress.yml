@@ -29,4 +29,3 @@ jobs:
         run: |
           cd android/app/build/outputs/apk/release/
           curl -X POST -H 'Content-Type: multipart/oform-data' -F text='App Release!' - F chat_id=$TG_CHAT_ID $TG_BOT_TOKEN/sendMessage
-          curl -X POST -H 'Content-Type: multipart/oform-data' -F document=@app-release.apk - F chat_id=$TG_CHAT_ID $TG_BOT_TOKEN/sendDocument
