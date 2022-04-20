@@ -1,0 +1,415 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Snapshoot 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "marginBottom": 172.85714285714283,
+    }
+  }
+>
+  <View>
+    <View
+      style={
+        Object {
+          "marginStart": 23.57142857142857,
+          "marginVertical": 23.57142857142857,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text
+          ellipsizeMode="tail"
+          numberOfLines={0}
+          style={
+            Array [
+              Object {
+                "fontFamily": "LibreBaskerville-Regular",
+              },
+              Object {
+                "color": "#272b5a",
+                "fontSize": 36.14285714285714,
+                "marginBottom": 7.857142857142857,
+                "marginEnd": 7.857142857142857,
+              },
+            ]
+          }
+        >
+          Search
+        </Text>
+        <Text
+          allowFontScaling={false}
+          selectable={false}
+          style={
+            Array [
+              Object {
+                "color": "#272b5a",
+                "fontSize": 30,
+              },
+              undefined,
+              Object {
+                "fontFamily": "Ionicons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+      <Text
+        ellipsizeMode="tail"
+        numberOfLines={0}
+        style={
+          Array [
+            Object {
+              "fontFamily": "LibreBaskerville-Regular",
+            },
+            Object {
+              "color": "#535487",
+              "fontSize": 22,
+              "marginStart": 7.857142857142857,
+              "marginTop": 7.857142857142857,
+            },
+          ]
+        }
+      >
+        Search your Favorite Book in Here!
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignSelf": "center",
+          "borderRadius": 4.714285714285714,
+          "flexDirection": "row",
+          "marginHorizontal": 15.714285714285714,
+          "marginTop": 7.857142857142857,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        selectable={false}
+        style={
+          Array [
+            Object {
+              "color": "#272b5a",
+              "fontSize": 30,
+            },
+            Object {
+              "alignItems": "center",
+              "marginRight": -55,
+              "marginTop": 11,
+            },
+            Object {
+              "fontFamily": "Ionicons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
+      <View
+        style={
+          Object {
+            "alignSelf": "center",
+          }
+        }
+      >
+        <TextInput
+          onChangeText={[Function]}
+          onSubmitEditing={[Function]}
+          placeholder="Write in Here"
+          placeholderTextColor="#272b5a"
+          secureTextEntry={false}
+          style={
+            Array [
+              Object {
+                "borderBottomWidth": 1.5714285714285714,
+                "borderColor": "#535487",
+                "borderRadius": 7.857142857142857,
+                "color": "#272b5a",
+                "height": 72.28571428571428,
+                "marginBottom": 18.857142857142858,
+                "padding": 15.714285714285714,
+                "width": 424.2857142857143,
+              },
+              Object {
+                "backgroundColor": "#8180b770",
+                "borderBottomWidth": 0,
+                "paddingStart": 62.857142857142854,
+                "width": 525,
+              },
+            ]
+          }
+          value=""
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "marginVertical": 3.142857142857143,
+        }
+      }
+    >
+      <RCTScrollView
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        style={
+          Object {
+            "marginBottom": 15.714285714285714,
+            "marginHorizontal": 15.714285714285714,
+          }
+        }
+      >
+        <View>
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#53548799",
+                "borderRadius": 7.857142857142857,
+                "height": 62.857142857142854,
+                "marginHorizontal": 7.857142857142857,
+                "opacity": 1,
+                "padding": 15.714285714285714,
+              }
+            }
+            testID="button"
+          >
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={0}
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "LibreBaskerville-Regular",
+                  },
+                  Object {
+                    "color": "#000000",
+                  },
+                ]
+              }
+            >
+              Harry Potter
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#53548799",
+                "borderRadius": 7.857142857142857,
+                "height": 62.857142857142854,
+                "marginHorizontal": 7.857142857142857,
+                "opacity": 1,
+                "padding": 15.714285714285714,
+              }
+            }
+            testID="button"
+          >
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={0}
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "LibreBaskerville-Regular",
+                  },
+                  Object {
+                    "color": "#000000",
+                  },
+                ]
+              }
+            >
+              Anna Karenina
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#53548799",
+                "borderRadius": 7.857142857142857,
+                "height": 62.857142857142854,
+                "marginHorizontal": 7.857142857142857,
+                "opacity": 1,
+                "padding": 15.714285714285714,
+              }
+            }
+            testID="button"
+          >
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={0}
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "LibreBaskerville-Regular",
+                  },
+                  Object {
+                    "color": "#000000",
+                  },
+                ]
+              }
+            >
+              Comedy
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#53548799",
+                "borderRadius": 7.857142857142857,
+                "height": 62.857142857142854,
+                "marginHorizontal": 7.857142857142857,
+                "opacity": 1,
+                "padding": 15.714285714285714,
+              }
+            }
+            testID="button"
+          >
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={0}
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "LibreBaskerville-Regular",
+                  },
+                  Object {
+                    "color": "#000000",
+                  },
+                ]
+              }
+            >
+              Paper
+            </Text>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
+    <View
+      style={
+        Object {
+          "marginBottom": 15.714285714285714,
+        }
+      }
+    >
+      <RCTScrollView
+        ListHeaderComponent={
+          <View>
+            <RecommendedBook
+              hideTitle={true}
+            />
+          </View>
+        }
+        data={Array []}
+        getItem={[Function]}
+        getItemCount={[Function]}
+        horizontal={false}
+        keyExtractor={[Function]}
+        onContentSizeChange={[Function]}
+        onLayout={[Function]}
+        onMomentumScrollBegin={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        refreshControl={<RefreshControlMock />}
+        removeClippedSubviews={false}
+        renderItem={[Function]}
+        scrollEventThrottle={50}
+        showsVerticalScrollIndicator={false}
+        stickyHeaderIndices={Array []}
+        viewabilityConfigCallbackPairs={Array []}
+      >
+        <RCTRefreshControl />
+        <View>
+          <View
+            onLayout={[Function]}
+          >
+            <View>
+              <View>
+                <RCTScrollView
+                  getItem={[Function]}
+                  getItemCount={[Function]}
+                  horizontal={true}
+                  keyExtractor={[Function]}
+                  onContentSizeChange={[Function]}
+                  onLayout={[Function]}
+                  onMomentumScrollBegin={[Function]}
+                  onMomentumScrollEnd={[Function]}
+                  onScroll={[Function]}
+                  onScrollBeginDrag={[Function]}
+                  onScrollEndDrag={[Function]}
+                  removeClippedSubviews={false}
+                  renderItem={[Function]}
+                  scrollEventThrottle={50}
+                  showsHorizontalScrollIndicator={false}
+                  stickyHeaderIndices={Array []}
+                  viewabilityConfigCallbackPairs={Array []}
+                >
+                  <View />
+                </RCTScrollView>
+              </View>
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
+  </View>
+</View>
+`;

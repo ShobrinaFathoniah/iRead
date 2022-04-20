@@ -41,7 +41,6 @@ const Register = ({navigation}) => {
     }
   };
 
-  console.log(password);
   const passwordChecker = passwordCheck => {
     if (!isValidPassword(passwordCheck) && passwordCheck.length > 0) {
       return (

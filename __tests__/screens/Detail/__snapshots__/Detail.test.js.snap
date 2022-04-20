@@ -1,0 +1,723 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Detail Snapshoot 1`] = `
+<RCTScrollView
+  refreshControl={
+    <RefreshControlMock
+      onRefresh={[Function]}
+      refreshing={false}
+    />
+  }
+>
+  <RCTRefreshControl />
+  <View>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "margin": 15.714285714285714,
+        }
+      }
+    >
+      <View>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#FFFFFF",
+              "borderColor": "#53548799",
+              "borderRadius": 157.14285714285714,
+              "borderWidth": 1.5714285714285714,
+              "height": 62.857142857142854,
+              "justifyContent": "center",
+              "opacity": 1,
+              "width": 62.857142857142854,
+            }
+          }
+          testID="circleButton"
+        >
+          <Text
+            allowFontScaling={false}
+            selectable={false}
+            style={
+              Array [
+                Object {
+                  "color": "#272b5a",
+                  "fontSize": 20,
+                },
+                undefined,
+                Object {
+                  "fontFamily": "anticon",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "flex-end",
+          }
+        }
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#FFFFFF",
+              "borderColor": "#53548799",
+              "borderRadius": 157.14285714285714,
+              "borderWidth": 1.5714285714285714,
+              "height": 62.857142857142854,
+              "justifyContent": "center",
+              "marginEnd": 15.714285714285714,
+              "opacity": 1,
+              "width": 62.857142857142854,
+            }
+          }
+          testID="circleButton"
+        >
+          <Text
+            allowFontScaling={false}
+            selectable={false}
+            style={
+              Array [
+                Object {
+                  "color": "#c4131e",
+                  "fontSize": 20,
+                },
+                undefined,
+                Object {
+                  "fontFamily": "anticon",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#FFFFFF",
+              "borderColor": "#53548799",
+              "borderRadius": 157.14285714285714,
+              "borderWidth": 1.5714285714285714,
+              "height": 62.857142857142854,
+              "justifyContent": "center",
+              "opacity": 1,
+              "width": 62.857142857142854,
+            }
+          }
+          testID="circleButton"
+        >
+          <Text
+            allowFontScaling={false}
+            selectable={false}
+            style={
+              Array [
+                Object {
+                  "color": "#272b5a",
+                  "fontSize": 20,
+                },
+                undefined,
+                Object {
+                  "fontFamily": "anticon",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "marginTop": 7.857142857142857,
+            "paddingVertical": 15.714285714285714,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "uri": undefined,
+              }
+            }
+            style={
+              Object {
+                "borderRadius": 7.857142857142857,
+                "height": 267,
+                "resizeMode": "contain",
+                "width": 247.5,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 2,
+              "margin": 15.714285714285714,
+            }
+          }
+        >
+          <Text
+            ellipsizeMode="tail"
+            numberOfLines={0}
+            style={
+              Array [
+                Object {
+                  "fontFamily": "LibreBaskerville-Bold",
+                },
+                Object {
+                  "color": "#272b5a",
+                  "fontSize": 26.714285714285715,
+                  "letterSpacing": 1.0999999999999999,
+                  "paddingRight": 7.857142857142857,
+                },
+              ]
+            }
+          />
+          <Text
+            ellipsizeMode="tail"
+            numberOfLines={0}
+            style={
+              Array [
+                Object {
+                  "fontFamily": "LibreBaskerville-Regular",
+                },
+                Object {
+                  "color": "#272b5a",
+                  "fontSize": 18.857142857142858,
+                  "letterSpacing": 1.0999999999999999,
+                  "marginTop": 15.714285714285714,
+                },
+              ]
+            }
+          />
+          <Text
+            ellipsizeMode="tail"
+            numberOfLines={0}
+            style={
+              Array [
+                Object {
+                  "fontFamily": "LibreBaskerville-Regular",
+                },
+                Object {
+                  "color": "#272b5a",
+                  "fontSize": 18.857142857142858,
+                  "letterSpacing": 1.0999999999999999,
+                  "marginTop": 4.714285714285714,
+                },
+              ]
+            }
+          />
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "marginTop": 7.857142857142857,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                  "marginRight": 15.714285714285714,
+                }
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                selectable={false}
+                style={
+                  Array [
+                    Object {
+                      "color": "#F1E1A6",
+                      "fontSize": 25,
+                    },
+                    undefined,
+                    Object {
+                      "fontFamily": "Material Icons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                
+              </Text>
+              <Text
+                allowFontScaling={false}
+                selectable={false}
+                style={
+                  Array [
+                    Object {
+                      "color": "#F1E1A6",
+                      "fontSize": 25,
+                    },
+                    undefined,
+                    Object {
+                      "fontFamily": "Material Icons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                
+              </Text>
+              <Text
+                allowFontScaling={false}
+                selectable={false}
+                style={
+                  Array [
+                    Object {
+                      "color": "#F1E1A6",
+                      "fontSize": 25,
+                    },
+                    undefined,
+                    Object {
+                      "fontFamily": "Material Icons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                
+              </Text>
+              <Text
+                allowFontScaling={false}
+                selectable={false}
+                style={
+                  Array [
+                    Object {
+                      "color": "#F1E1A6",
+                      "fontSize": 25,
+                    },
+                    undefined,
+                    Object {
+                      "fontFamily": "Material Icons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                
+              </Text>
+              <Text
+                allowFontScaling={false}
+                selectable={false}
+                style={
+                  Array [
+                    Object {
+                      "color": "#F1E1A6",
+                      "fontSize": 25,
+                    },
+                    undefined,
+                    Object {
+                      "fontFamily": "Material Icons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={0}
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "LibreBaskerville-Regular",
+                  },
+                  Object {
+                    "color": "#272b5a",
+                    "fontSize": 22,
+                    "letterSpacing": 1.0999999999999999,
+                  },
+                ]
+              }
+            />
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={0}
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "LibreBaskerville-Regular",
+                  },
+                  Object {
+                    "color": "#53548799",
+                    "fontSize": 22,
+                    "letterSpacing": 1.0999999999999999,
+                    "marginStart": 7.857142857142857,
+                  },
+                ]
+              }
+            >
+              |
+            </Text>
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={0}
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "LibreBaskerville-Regular",
+                  },
+                  Object {
+                    "color": "#272b5a",
+                    "fontSize": 22,
+                    "letterSpacing": 1.0999999999999999,
+                    "marginStart": 7.857142857142857,
+                  },
+                ]
+              }
+            />
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={0}
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "LibreBaskerville-Regular",
+                  },
+                  Object {
+                    "color": "#272b5a",
+                    "fontSize": 22,
+                    "letterSpacing": 1.0999999999999999,
+                    "marginStart": 7.857142857142857,
+                  },
+                ]
+              }
+            >
+              Sold
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "margin": 15.714285714285714,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "marginRight": 47.14285714285714,
+            }
+          }
+        >
+          <Text
+            ellipsizeMode="tail"
+            numberOfLines={0}
+            style={
+              Array [
+                Object {
+                  "fontFamily": "LibreBaskerville-Bold",
+                },
+                Object {
+                  "color": "#272b5a",
+                  "fontSize": 23.57142857142857,
+                  "letterSpacing": 1.0999999999999999,
+                  "marginTop": 7.857142857142857,
+                },
+              ]
+            }
+          />
+          <Text
+            ellipsizeMode="tail"
+            numberOfLines={0}
+            style={
+              Array [
+                Object {
+                  "fontFamily": "LibreBaskerville-Regular",
+                },
+                Object {
+                  "color": "#272b5a",
+                  "fontSize": 23.57142857142857,
+                  "letterSpacing": 1.0999999999999999,
+                },
+              ]
+            }
+          >
+            Pages
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+            }
+          }
+        >
+          <Text
+            ellipsizeMode="tail"
+            numberOfLines={0}
+            style={
+              Array [
+                Object {
+                  "fontFamily": "LibreBaskerville-Bold",
+                },
+                Object {
+                  "color": "#c4131e",
+                  "fontSize": 23.57142857142857,
+                  "letterSpacing": 1.0999999999999999,
+                  "marginTop": 7.857142857142857,
+                },
+              ]
+            }
+          />
+          <Text
+            ellipsizeMode="tail"
+            numberOfLines={0}
+            style={
+              Array [
+                Object {
+                  "fontFamily": "LibreBaskerville-Regular",
+                },
+                Object {
+                  "color": "#272b5a",
+                  "fontSize": 23.57142857142857,
+                  "letterSpacing": 1.0999999999999999,
+                },
+              ]
+            }
+          >
+            Stocks
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-evenly",
+            "margin": 15.714285714285714,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "marginRight": 15.714285714285714,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#39c2dd",
+                  "borderRadius": 7.857142857142857,
+                  "marginStart": 15.714285714285714,
+                  "padding": 15.714285714285714,
+                  "width": 251.42857142857142,
+                },
+                Object {
+                  "backgroundColor": "#535487",
+                },
+              ]
+            }
+          >
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={0}
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "LibreBaskerville-Regular",
+                  },
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 25.142857142857142,
+                    "letterSpacing": 1.0999999999999999,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              No e-Book
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "marginRight": 15.714285714285714,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#39c2dd",
+                  "borderRadius": 7.857142857142857,
+                  "marginStart": 15.714285714285714,
+                  "padding": 15.714285714285714,
+                  "width": 251.42857142857142,
+                },
+                Object {
+                  "backgroundColor": "#c4131e",
+                },
+              ]
+            }
+          >
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={0}
+              style={
+                Array [
+                  Object {
+                    "fontFamily": "LibreBaskerville-Regular",
+                  },
+                  Object {
+                    "color": "#000000",
+                    "fontSize": 25.142857142857142,
+                    "letterSpacing": 1.0999999999999999,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              Out of Stock
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "marginHorizontal": 23.57142857142857,
+          }
+        }
+      >
+        <Text
+          ellipsizeMode="tail"
+          numberOfLines={0}
+          style={
+            Array [
+              Object {
+                "fontFamily": "LibreBaskerville-Bold",
+              },
+              Object {
+                "color": "#272b5a",
+                "fontSize": 28.285714285714285,
+                "letterSpacing": 1.0999999999999999,
+                "marginTop": 15.714285714285714,
+              },
+            ]
+          }
+        >
+          Synopsis
+        </Text>
+        <View
+          style={
+            Object {
+              "borderRadius": 15.714285714285714,
+              "marginEnd": 7.857142857142857,
+              "marginTop": 7.857142857142857,
+            }
+          }
+        >
+          <Text
+            ellipsizeMode="tail"
+            numberOfLines={0}
+            style={
+              Array [
+                Object {
+                  "fontFamily": "LibreBaskerville-Regular",
+                },
+                Object {
+                  "color": "#272b5a",
+                  "fontSize": 22,
+                  "letterSpacing": 1.0999999999999999,
+                  "textAlign": "justify",
+                },
+              ]
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;

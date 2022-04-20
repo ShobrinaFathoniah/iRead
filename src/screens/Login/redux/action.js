@@ -8,15 +8,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const sendDataLogin = dataUser => async dispatch => {
   try {
-    // console.log(dataUser, 'action login');
     if (dataUser) {
       dispatch(setIsLoading(true));
       const res = await axios.post(`${BASE_URL}/auth/login`, dataUser);
-
-      console.log(res, 'res');
-      console.log(res.data.tokens.access.token);
-
       const token = res.data.tokens.access.token;
+
       if (token) {
         dispatch(setToken(token));
         await AsyncStorage.setItem('@token', token);
@@ -33,7 +29,6 @@ export const sendDataLogin = dataUser => async dispatch => {
     }
   } catch (error) {
     Alert.alert('Pemberitahuan', `${error}`);
-    console.log(error, 'error');
     dispatch(setIsLoading(false));
 
     if ((error.message = 'Request failed with status code 401')) {

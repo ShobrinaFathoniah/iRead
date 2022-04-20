@@ -11,7 +11,7 @@ import {moderateScale} from 'react-native-size-matters';
 import {DARK_PURPLE_500, RED_500} from '../../helpers/colors';
 import PopularCard from '../PopularCard';
 import {navigate} from '../../helpers/navigate';
-import Recommended from '../Recommended';
+import RecommendedBook from '../RecommendedBook';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Header from '../Header';
 import {getTimeNow} from '../../helpers/timeNow';
@@ -66,7 +66,7 @@ const Popular = ({
           />
         ) : null}
 
-        <Recommended data={recommendedBooks} hideTitle={hideTitle} />
+        <RecommendedBook data={recommendedBooks} hideTitle={hideTitle} />
         {hideTitle ? null : (
           <View style={styles.containerTitle}>
             <LibreBaskerville type="Bold" style={styles.bab}>

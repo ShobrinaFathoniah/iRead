@@ -1,16 +1,15 @@
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, FlatList} from 'react-native';
 import React from 'react';
 import {LibreBaskerville} from '../Fonts';
 import {moderateScale} from 'react-native-size-matters';
 import {DARK_PURPLE_500, YELLOW_500} from '../../helpers/colors';
-import {FlatList} from 'react-native-gesture-handler';
 import BooksCard from '../BooksCard';
 import {navigate} from '../../helpers/navigate';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import LoadingBar from '../LoadingBar';
 import {useSelector} from 'react-redux';
 
-const Recommended = ({data, hideTitle}) => {
+const RecommendedBook = ({data, hideTitle}) => {
   const {isLoading} = useSelector(state => state.global);
 
   const booksCard = ({item}) => {
@@ -58,7 +57,7 @@ const Recommended = ({data, hideTitle}) => {
   );
 };
 
-export default Recommended;
+export default RecommendedBook;
 
 const styles = StyleSheet.create({
   bab: {

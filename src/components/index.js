@@ -3,7 +3,7 @@ import NoConnection from './NoConnection';
 import Header from './Header';
 import Input from './Input';
 import Forms from './Forms';
-import Recommended from './Recommended';
+import RecommendedBook from './RecommendedBook';
 import BooksCard from './BooksCard';
 import Popular from './Popular';
 import PopularCard from './PopularCard';
@@ -18,7 +18,7 @@ export {
   Header,
   Input,
   Forms,
-  Recommended,
+  RecommendedBook,
   BooksCard,
   Popular,
   PopularCard,

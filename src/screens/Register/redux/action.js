@@ -11,10 +11,6 @@ export const sendDataRegister =
     try {
       if (email && name && password) {
         const res = await axios.post(`${BASE_URL}/auth/register`, dataUser);
-
-        console.log(res, 'res');
-        console.log(res.data.success, 'res');
-
         const success = res.data.success;
 
         if (success) {
@@ -36,7 +32,6 @@ export const sendDataRegister =
         dispatch(setIsLoading(false));
       }
     } catch (error) {
-      console.log(error);
       Alert.alert('Pemberitahuan', `${error}`);
 
       dispatch(setIsLoading(false));

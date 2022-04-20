@@ -22,9 +22,7 @@ export const getDataBooks = payload => async dispatch => {
     } else {
       dispatch(setIsLoading(false));
     }
-    console.log(res);
   } catch (error) {
-    console.log(error);
     dispatch(setIsLoading(false));
     dispatch(setRefreshing(false));
 

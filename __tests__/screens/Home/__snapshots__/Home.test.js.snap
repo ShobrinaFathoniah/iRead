@@ -1,0 +1,311 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Snapshoot Home Snapshoot 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View>
+    <View
+      style={
+        Object {
+          "marginBottom": 15.714285714285714,
+        }
+      }
+    >
+      <RCTScrollView
+        ListHeaderComponent={
+          <View>
+            <Header
+              button={true}
+              nameIcon="logout"
+              onPressButton={[Function]}
+              radiusBottom={true}
+              text="Selamat Siang!"
+            />
+            <RecommendedBook
+              data={Array []}
+              hideTitle={false}
+            />
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "marginTop": 39.285714285714285,
+                }
+              }
+            >
+              <LibreBaskerville
+                style={
+                  Object {
+                    "color": "#272b5a",
+                    "fontSize": 31.428571428571427,
+                    "marginStart": 23.57142857142857,
+                  }
+                }
+                type="Bold"
+              >
+                Popular Books
+              </LibreBaskerville>
+              <Icon
+                allowFontScaling={false}
+                color="#c4131e"
+                name="heart"
+                size={20}
+                style={
+                  Object {
+                    "marginStart": 7.857142857142857,
+                  }
+                }
+              />
+            </View>
+          </View>
+        }
+        data={Array []}
+        getItem={[Function]}
+        getItemCount={[Function]}
+        horizontal={false}
+        keyExtractor={[Function]}
+        onContentSizeChange={[Function]}
+        onLayout={[Function]}
+        onMomentumScrollBegin={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        refreshControl={
+          <RefreshControlMock
+            onRefresh={[Function]}
+            refreshing={false}
+          />
+        }
+        removeClippedSubviews={false}
+        renderItem={[Function]}
+        scrollEventThrottle={50}
+        showsVerticalScrollIndicator={false}
+        stickyHeaderIndices={Array []}
+        viewabilityConfigCallbackPairs={Array []}
+      >
+        <RCTRefreshControl />
+        <View>
+          <View
+            onLayout={[Function]}
+          >
+            <View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#8180b7",
+                    "borderBottomEndRadius": 150,
+                    "borderBottomStartRadius": 150,
+                    "flexDirection": "row",
+                    "justifyContent": "space-evenly",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "PassionsConflict-Regular",
+                      },
+                      Object {
+                        "color": "#000000",
+                        "fontSize": 66,
+                        "letterSpacing": 3.142857142857143,
+                        "margin": 15.714285714285714,
+                        "textAlign": "center",
+                      },
+                    ]
+                  }
+                >
+                  Selamat Siang!
+                </Text>
+                <View
+                  accessible={true}
+                  collapsable={false}
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#FFFFFF",
+                      "borderColor": "#53548799",
+                      "borderRadius": 157.14285714285714,
+                      "borderWidth": 1.5714285714285714,
+                      "height": 62.857142857142854,
+                      "justifyContent": "center",
+                      "opacity": 1,
+                      "width": 62.857142857142854,
+                    }
+                  }
+                  testID="circleButton"
+                >
+                  <Text
+                    allowFontScaling={false}
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {
+                          "color": "#272b5a",
+                          "fontSize": 20,
+                        },
+                        undefined,
+                        Object {
+                          "fontFamily": "anticon",
+                          "fontStyle": "normal",
+                          "fontWeight": "normal",
+                        },
+                        Object {},
+                      ]
+                    }
+                  >
+                    
+                  </Text>
+                </View>
+              </View>
+              <View>
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                      "marginVertical": 23.57142857142857,
+                    }
+                  }
+                >
+                  <Text
+                    ellipsizeMode="tail"
+                    numberOfLines={0}
+                    style={
+                      Array [
+                        Object {
+                          "fontFamily": "LibreBaskerville-Bold",
+                        },
+                        Object {
+                          "color": "#272b5a",
+                          "fontSize": 31.428571428571427,
+                          "marginStart": 23.57142857142857,
+                        },
+                      ]
+                    }
+                  >
+                    Recommended Books
+                  </Text>
+                  <Text
+                    allowFontScaling={false}
+                    selectable={false}
+                    style={
+                      Array [
+                        Object {
+                          "color": "#dbcc26",
+                          "fontSize": 30,
+                        },
+                        Object {
+                          "marginStart": 7.857142857142857,
+                        },
+                        Object {
+                          "fontFamily": "Material Icons",
+                          "fontStyle": "normal",
+                          "fontWeight": "normal",
+                        },
+                        Object {},
+                      ]
+                    }
+                  >
+                    
+                  </Text>
+                </View>
+                <RCTScrollView
+                  data={Array []}
+                  getItem={[Function]}
+                  getItemCount={[Function]}
+                  horizontal={true}
+                  keyExtractor={[Function]}
+                  onContentSizeChange={[Function]}
+                  onLayout={[Function]}
+                  onMomentumScrollBegin={[Function]}
+                  onMomentumScrollEnd={[Function]}
+                  onScroll={[Function]}
+                  onScrollBeginDrag={[Function]}
+                  onScrollEndDrag={[Function]}
+                  removeClippedSubviews={false}
+                  renderItem={[Function]}
+                  scrollEventThrottle={50}
+                  showsHorizontalScrollIndicator={false}
+                  stickyHeaderIndices={Array []}
+                  viewabilityConfigCallbackPairs={Array []}
+                >
+                  <View />
+                </RCTScrollView>
+              </View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "marginTop": 39.285714285714285,
+                  }
+                }
+              >
+                <Text
+                  ellipsizeMode="tail"
+                  numberOfLines={0}
+                  style={
+                    Array [
+                      Object {
+                        "fontFamily": "LibreBaskerville-Bold",
+                      },
+                      Object {
+                        "color": "#272b5a",
+                        "fontSize": 31.428571428571427,
+                        "marginStart": 23.57142857142857,
+                      },
+                    ]
+                  }
+                >
+                  Popular Books
+                </Text>
+                <Text
+                  allowFontScaling={false}
+                  selectable={false}
+                  style={
+                    Array [
+                      Object {
+                        "color": "#c4131e",
+                        "fontSize": 20,
+                      },
+                      Object {
+                        "marginStart": 7.857142857142857,
+                      },
+                      Object {
+                        "fontFamily": "anticon",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
+  </View>
+</View>
+`;

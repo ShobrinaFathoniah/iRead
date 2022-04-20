@@ -1,4 +1,4 @@
-import {View, BackHandler, Alert} from 'react-native';
+import {View, Alert} from 'react-native';
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getDataBooks} from './redux/action';
@@ -16,36 +16,11 @@ const Home = ({}) => {
   const {data} = useSelector(state => state.home);
   const {refreshing, connection} = useSelector(state => state.global);
 
-  console.log(data.length);
-
-  // tombol exit
-  const exit = () => {
-    const backAction = () => {
-      Alert.alert('Hold on!', 'Do you want to exit the application?', [
-        {
-          text: 'Cancel',
-          onPress: () => null,
-          style: 'cancel',
-        },
-        {text: 'YES', onPress: () => BackHandler.exitApp()},
-      ]);
-      return true;
-    };
-
-    const backHandler = BackHandler.addEventListener(
-      'hardwareBackPress',
-      backAction,
-    );
-
-    return () => backHandler.remove();
-  };
-
   useEffect(() => {
     const getDataBook = () => {
       dispatch(getDataBooks(dataToken));
     };
     getDataBook();
-    exit();
   }, [dataToken, dispatch]);
 
   const onRefresh = () => {
@@ -59,7 +34,6 @@ const Home = ({}) => {
       {
         text: 'Cancel',
         onPress: () => null,
-        style: 'cancel',
       },
       {
         text: 'YES',
