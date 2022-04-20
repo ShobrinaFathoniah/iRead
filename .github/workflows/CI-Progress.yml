@@ -21,7 +21,7 @@ jobs:
         run: yarn
 
       - name: Unit Testing
-        run: yarn test
+        run: yarn test -u
 
   check-linter:
     runs-on: ubuntu-latest
