@@ -24,7 +24,7 @@ exports[`Test Snapshoot Home Snapshoot 1`] = `
               nameIcon="logout"
               onPressButton={[Function]}
               radiusBottom={true}
-              text="Selamat Sore!"
+              text="Selamat Malam!"
             />
             <RecommendedBook
               data={Array []}
@@ -124,7 +124,7 @@ exports[`Test Snapshoot Home Snapshoot 1`] = `
                     ]
                   }
                 >
-                  Selamat Sore!
+                  Selamat Malam!
                 </Text>
                 <View
                   accessible={true}
