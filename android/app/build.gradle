@@ -219,7 +219,6 @@ dependencies {
 
     //detox
     androidTestImplementation('com.wix:detox:+')
-    androidTestImplementation 'com.linkedin.testbutler:test-butler-library:2.2.1'
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
     implementation project(':react-native-splash-screen')
