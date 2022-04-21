@@ -86,6 +86,5 @@ jobs:
           packageName: com.iread
           releaseFiles: android/app/build/outputs/bundle/release/*.aab
           track: alpha
-          status: completed
+          status: draft
           inAppUpdatePriority: 2
-          release_status: 'draft'

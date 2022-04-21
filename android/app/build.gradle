@@ -145,8 +145,8 @@ android {
         applicationId "com.iread"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 4
-        versionName "1.2.2"
+        versionCode 5
+        versionName "1.2.3"
 
         //detox
         testBuildType System.getProperty('testBuildType','releaseE2E') // This will later be used to control the test apk build type
