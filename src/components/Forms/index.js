@@ -13,9 +13,13 @@ import {Courgette, LibreBaskerville} from '../Fonts';
 const Forms = ({type, children, onPressButton, onPressText}) => {
   const image = () => {
     if (type === 'Login') {
-      return <Image style={styles.image} source={loginPic} />;
+      return (
+        <Image testID="LoginImage" style={styles.image} source={loginPic} />
+      );
     } else if (type === 'Register') {
-      return <Image style={styles.image} source={registerPic} />;
+      return (
+        <Image testID="RegisImage" style={styles.image} source={registerPic} />
+      );
     } else {
       return null;
     }
@@ -24,22 +28,22 @@ const Forms = ({type, children, onPressButton, onPressText}) => {
   const helpText = types => {
     if (types === 'Login') {
       return (
-        <View style={styles.containerTextHelper}>
+        <View testID="LoginHelpText" style={styles.containerTextHelper}>
           <LibreBaskerville style={{color: BLACK}}>
             Not Have an Account?
           </LibreBaskerville>
-          <TouchableOpacity onPress={onPressText}>
+          <TouchableOpacity testID="ButtonTextRegist" onPress={onPressText}>
             <LibreBaskerville style={styles.text}>Register</LibreBaskerville>
           </TouchableOpacity>
         </View>
       );
     } else if (types === 'Register') {
       return (
-        <View style={styles.containerTextHelper}>
+        <View testID="RegisHelpText" style={styles.containerTextHelper}>
           <LibreBaskerville style={{color: BLACK}}>
             Have an Account?
           </LibreBaskerville>
-          <TouchableOpacity onPress={onPressText}>
+          <TouchableOpacity testID="ButtonTextLogin" onPress={onPressText}>
             <LibreBaskerville style={styles.text}>Login</LibreBaskerville>
           </TouchableOpacity>
         </View>
@@ -48,11 +52,14 @@ const Forms = ({type, children, onPressButton, onPressText}) => {
   };
 
   return (
-    <View>
+    <View testID="FormComponent">
       <Courgette style={styles.title}>{type}</Courgette>
       {image()}
       {children}
-      <TouchableOpacity style={styles.button} onPress={onPressButton}>
+      <TouchableOpacity
+        testID="ButtonLoginRegis"
+        style={styles.button}
+        onPress={onPressButton}>
         <LibreBaskerville style={styles.buttonText}>{type}</LibreBaskerville>
       </TouchableOpacity>
       {helpText(type)}

@@ -8,7 +8,9 @@ exports[`Test Snapshoot Home Snapshoot 1`] = `
     }
   }
 >
-  <View>
+  <View
+    testID="HomeScreen"
+  >
     <View
       style={
         Object {
@@ -24,7 +26,7 @@ exports[`Test Snapshoot Home Snapshoot 1`] = `
               nameIcon="logout"
               onPressButton={[Function]}
               radiusBottom={true}
-              text="Selamat Malam!"
+              text="Selamat Sore!"
             />
             <RecommendedBook
               data={Array []}
@@ -124,7 +126,7 @@ exports[`Test Snapshoot Home Snapshoot 1`] = `
                     ]
                   }
                 >
-                  Selamat Malam!
+                  Selamat Sore!
                 </Text>
                 <View
                   accessible={true}

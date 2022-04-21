@@ -55,7 +55,7 @@ const Home = ({}) => {
 
   const homeScreen = () => {
     return (
-      <View>
+      <View testID="HomeScreen">
         <Popular
           data1={popularBooks}
           data2={recommendedBooks}

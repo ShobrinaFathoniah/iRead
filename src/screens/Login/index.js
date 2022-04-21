@@ -41,15 +41,17 @@ const Login = ({navigation}) => {
 
   const loginScreen = () => {
     return (
-      <View>
+      <View testID="LoginScreen">
         <Forms type="Login" onPressButton={login} onPressText={goToRegister}>
           <View>
             <Input
+              testID="emailForm"
               onChangeText={value => setEmail(value)}
               value={dataEmail ? dataEmail : email}
               placeholder="Email"
             />
             <Input
+              testID="passwordForm"
               onChangeText={value => setPassword(value)}
               value={dataPassword ? dataPassword : password}
               placeholder="Password"

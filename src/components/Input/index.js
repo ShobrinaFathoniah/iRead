@@ -11,6 +11,7 @@ const Input = ({
   style,
   placeholderTextColor = DARK_PURPLE_500,
   onSubmitEditing,
+  testID,
 }) => {
   const passedStyles = Array.isArray(style)
     ? Object.assign({}, ...style)
@@ -19,6 +20,7 @@ const Input = ({
   return (
     <View style={styles.containerInput}>
       <TextInput
+        testID={testID}
         style={[styles.input, {...passedStyles}]}
         onChangeText={onChangeText}
         value={value}

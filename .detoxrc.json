@@ -9,7 +9,8 @@
     },
     "android": {
       "type": "android.apk",
-      "binaryPath": "android/app/build/outputs/apk/release/app-release.apk"
+      "binaryPath": "android/app/build/outputs/apk/releaseE2E/app-releaseE2E.apk",
+      "build": "cd android && gradlew assembleReleaseE2E assembleAndroidTest -DtestBuildType=releaseE2E && cd .."
     }
   },
   "devices": {
@@ -20,9 +21,9 @@
       }
     },
     "emulator": {
-      "type": "android.emulator",
+      "type": "android.attached",
       "device": {
-        "avdName": "Pixel_3a_API_30_x86"
+        "adbName": "d0ef07870411"
       }
     }
   },

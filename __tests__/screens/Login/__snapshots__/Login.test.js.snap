@@ -34,8 +34,12 @@ exports[`Login Snapshoot 1`] = `
         iRead
       </Text>
     </View>
-    <View>
-      <View>
+    <View
+      testID="LoginScreen"
+    >
+      <View
+        testID="FormComponent"
+      >
         <Text
           style={
             Array [
@@ -68,6 +72,7 @@ exports[`Login Snapshoot 1`] = `
               "width": 392.85714285714283,
             }
           }
+          testID="LoginImage"
         />
         <View>
           <View
@@ -97,6 +102,7 @@ exports[`Login Snapshoot 1`] = `
                   Object {},
                 ]
               }
+              testID="emailForm"
               value=""
             />
           </View>
@@ -127,6 +133,7 @@ exports[`Login Snapshoot 1`] = `
                   Object {},
                 ]
               }
+              testID="passwordForm"
               value=""
             />
           </View>
@@ -153,6 +160,7 @@ exports[`Login Snapshoot 1`] = `
               "width": 408.57142857142856,
             }
           }
+          testID="ButtonLoginRegis"
         >
           <Text
             ellipsizeMode="tail"
@@ -181,6 +189,7 @@ exports[`Login Snapshoot 1`] = `
               "margin": 15.714285714285714,
             }
           }
+          testID="LoginHelpText"
         >
           <Text
             ellipsizeMode="tail"
@@ -214,6 +223,7 @@ exports[`Login Snapshoot 1`] = `
                 "opacity": 1,
               }
             }
+            testID="ButtonTextRegist"
           >
             <Text
               ellipsizeMode="tail"

@@ -1,5 +1,5 @@
 // Replace "com.example" here and below with your app's package name from the top of MainActivity.java
-package com.example;
+package com.iread;
 
 import com.wix.detox.Detox;
 import com.wix.detox.config.DetoxConfig;
@@ -22,14 +22,10 @@ public class DetoxTest {
 
     @Test
     public void runDetoxTests() {
-        // This is optional - in case you've decided to integrate TestButler
-        // See https://github.com/wix/Detox/blob/master/docs/Introduction.Android.md#8-test-butler-support-optional
-        TestButlerProbe.assertReadyIfInstalled();
-
         DetoxConfig detoxConfig = new DetoxConfig();
         detoxConfig.idlePolicyConfig.masterTimeoutSec = 90;
         detoxConfig.idlePolicyConfig.idleResourceTimeoutSec = 60;
-        detoxConfig.rnContextLoadTimeoutSec = (com.example.BuildConfig.DEBUG ? 180 : 60);
+        detoxConfig.rnContextLoadTimeoutSec = (com.iread.BuildConfig.DEBUG ? 180 : 60);
 
         Detox.runTests(mActivityRule, detoxConfig);
     }
