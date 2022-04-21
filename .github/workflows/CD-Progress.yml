@@ -88,3 +88,4 @@ jobs:
           track: alpha
           status: completed
           inAppUpdatePriority: 2
+          release_status: 'draft'
